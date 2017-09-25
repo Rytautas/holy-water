@@ -44,6 +44,10 @@ namespace holy_water
         {
             Application.Run(new Skale());
         }
+        private void opennewformivedimas(object obj)
+        {
+            Application.Run(new Ivedimas());
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -51,7 +55,14 @@ namespace holy_water
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                this.Close();
+                th = new Thread(opennewformivedimas);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+            else MessageBox.Show("Ar jūs esate pilnametis?");
         }
     }
 }

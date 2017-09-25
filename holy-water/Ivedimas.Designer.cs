@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class Skale
+    partial class Ivedimas
     {
         /// <summary>
         /// Required designer variable.
@@ -35,17 +35,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 55);
+            this.textBox1.Location = new System.Drawing.Point(80, 59);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 26);
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 199);
+            this.button1.Location = new System.Drawing.Point(13, 200);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 33);
+            this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Atgal";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,15 +52,14 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(168, 199);
+            this.button2.Location = new System.Drawing.Point(158, 200);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 33);
+            this.button2.Size = new System.Drawing.Size(108, 32);
             this.button2.TabIndex = 2;
             this.button2.Text = "Išsaugoti";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Skale
+            // Ivedimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,9 +68,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "Skale";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Skale_Load);
+            this.Name = "Ivedimas";
+            this.Text = "Ivedimas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
