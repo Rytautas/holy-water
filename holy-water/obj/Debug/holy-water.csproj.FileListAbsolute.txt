@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\holy-water\holy-water\bin\Debug\holy-water.exe.config
+C:\Users\User\source\repos\holy-water\holy-water\bin\Debug\holy-water.exe
+C:\Users\User\source\repos\holy-water\holy-water\bin\Debug\holy-water.pdb
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.Properties.Resources.resources
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy-water.csproj.GenerateResource.Cache
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy-water.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy-water.exe
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy-water.pdb
+C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.Form1.resources
