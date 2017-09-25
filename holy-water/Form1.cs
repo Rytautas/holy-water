@@ -32,13 +32,12 @@ namespace holy_water
         private void button1_Click(object sender, EventArgs e)
         {   if (checkBox1.CheckState == CheckState.Checked)
             {
-                this.Close();
+                //this.Close();
                 th = new Thread(opennewform);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
             else MessageBox.Show("Ar jūs esate pilnametis?");
-            
         }
         private void opennewform (object obj)
         {
@@ -48,21 +47,22 @@ namespace holy_water
         {
             Application.Run(new Ivedimas());
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                this.Close();
+                //this.Close();
                 th = new Thread(opennewformivedimas);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
             else MessageBox.Show("Ar jūs esate pilnametis?");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

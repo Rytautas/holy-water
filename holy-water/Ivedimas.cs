@@ -22,13 +22,18 @@ namespace holy_water
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            th = new Thread(opennewform);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            //th = new Thread(opennewform);
+            //th.SetApartmentState(ApartmentState.STA);
+            //th.Start();
         }
         private void opennewform(object obj)
         {
             Application.Run(new Form1());
+        }
+
+        private void Ivedimas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
