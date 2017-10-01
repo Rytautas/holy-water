@@ -3,7 +3,6 @@ using System.Collections;
 using System.IO;
 using System.Windows.Forms;
 
-
 namespace holy_water
 {
     public partial class Ivedimas : Form
@@ -24,15 +23,28 @@ namespace holy_water
 
         private void Ivedimas_Load(object sender, EventArgs e)
         {
-
+            StreamReader sr = new StreamReader("Bar_data.txt");
+            string line = sr.ReadLine();
+            while (line != null)
+            {
+                string[] split = line.Split(' ');
+                Baras temp = new Baras();
+                temp.name = split[0];
+                comboBox1.Items.Add(split[0]);
+                temp.volume = Convert.ToDouble(split[1]);
+                temp.percentage = Int32.Parse(split[2]);
+                temp.locX = Convert.ToDouble(split[3]);
+                temp.locY = Convert.ToDouble(split[4]);
+                barai.Add(temp);
+                line = sr.ReadLine();
+            }
+            sr.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -62,16 +74,22 @@ namespace holy_water
         
         private void button2_Click(object sender, EventArgs e)
         {
-            System.IO.StreamWriter reset = new StreamWriter("Bar_data.txt");
-            reset.WriteLine("");
+            StreamWriter reset = new StreamWriter("Bar_data.txt");
+            reset.Write("");
             reset.Close();
 
-            System.IO.StreamWriter wr = new StreamWriter("Bar_data.txt", true);
+            StreamWriter wr = new StreamWriter("Bar_data.txt", true);
             foreach(Baras a in barai)
             {
                 wr.WriteLine(a.name + " " + a.volume + " " + a.percentage + " " + a.locX + " " + a.locY);
             }
             wr.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            barai.RemoveAt(comboBox1.SelectedIndex);
+            comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
         }
     }
 }
