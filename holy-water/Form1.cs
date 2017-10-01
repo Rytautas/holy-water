@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -36,7 +29,7 @@ namespace holy_water
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
-            else MessageBox.Show("Ar jūs esate pilnametis?");
+            else MessageBox.Show("Are you 18+ years old?");
         }
         private void opennewform (object obj)
         {
@@ -55,7 +48,7 @@ namespace holy_water
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
-            else MessageBox.Show("Ar jūs esate pilnametis?");
+            else MessageBox.Show("Are you 18+ years old?");
         }
 
         private void Form1_Load(object sender, EventArgs e)
