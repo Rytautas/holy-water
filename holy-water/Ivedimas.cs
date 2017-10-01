@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -59,10 +60,18 @@ namespace holy_water
             textBox6.Text = bar.locY.ToString("F2");
         }
         
-
         private void button2_Click(object sender, EventArgs e)
         {
+            System.IO.StreamWriter reset = new StreamWriter("Bar_data.txt");
+            reset.WriteLine("");
+            reset.Close();
 
+            System.IO.StreamWriter wr = new StreamWriter("Bar_data.txt", true);
+            foreach(Baras a in barai)
+            {
+                wr.WriteLine(a.name + " " + a.volume + " " + a.percentage + " " + a.locX + " " + a.locY);
+            }
+            wr.Close();
         }
     }
 }

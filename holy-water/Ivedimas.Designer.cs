@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Add = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -74,15 +74,15 @@
             this.textBox1.Size = new System.Drawing.Size(242, 22);
             this.textBox1.TabIndex = 4;
             // 
-            // Add
+            // button3
             // 
-            this.Add.Location = new System.Drawing.Point(385, 39);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(104, 23);
-            this.Add.TabIndex = 5;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Location = new System.Drawing.Point(385, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(104, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
@@ -127,7 +127,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.Add);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(12, 76);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(527, 198);
@@ -182,7 +182,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
