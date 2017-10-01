@@ -32,7 +32,6 @@ namespace holy_water
         private void button1_Click(object sender, EventArgs e)
         {   if (checkBox1.CheckState == CheckState.Checked)
             {
-                //this.Close();
                 th = new Thread(opennewform);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
@@ -52,7 +51,6 @@ namespace holy_water
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                //this.Close();
                 th = new Thread(opennewformivedimas);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
