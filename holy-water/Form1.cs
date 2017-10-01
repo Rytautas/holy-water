@@ -29,7 +29,18 @@ namespace holy_water
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
-            else MessageBox.Show("Are you 18+ years old?");
+            else
+            {
+                DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
+    MessageBoxDefaultButton.Button2);
+                if (result1 == DialogResult.Yes)
+                {
+                    MessageBox.Show("You are allowed to drink");
+                    checkBox1.Checked = true;
+
+                }
+                else MessageBox.Show("Sorry, you are underaged");
+            }
         }
         private void opennewform (object obj)
         {
@@ -48,7 +59,18 @@ namespace holy_water
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
-            else MessageBox.Show("Are you 18+ years old?");
+            else
+            {
+                DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
+    MessageBoxDefaultButton.Button2);
+                if (result1 == DialogResult.Yes)
+                {
+                    MessageBox.Show("You are allowed to drink");
+                    checkBox1.Checked = true;
+
+                }
+                else MessageBox.Show("Sorry, you are underaged");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
