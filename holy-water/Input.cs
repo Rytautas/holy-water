@@ -44,17 +44,24 @@ namespace holy_water
         {
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
             {
+                try { 
                 Bar bar = new Bar
                 {
+
                     name = textBox1.Text,
                     volume = Convert.ToDouble(textBox2.Text),
                     percentage = Int32.Parse(textBox3.Text),
                     locX = Convert.ToDouble(textBox5.Text),
                     locY = Convert.ToDouble(textBox6.Text)
                 };
-                
+
                 comboBox1.Items.Add(bar.name);
                 bars.Add(bar);
+                }
+                catch(FormatException ex)
+                {
+                    MessageBox.Show("You have entered non-numeric characters");
+                }
             }
             else
             {
