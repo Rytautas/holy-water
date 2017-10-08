@@ -7,14 +7,8 @@ namespace holy_water
 {
     public partial class Input : Form
     {
-        ArrayList bars = new ArrayList(1);
-        public class Bar
-        {
-            public String name;
-            public double volume;
-            public int percentage;
-            public double locX, locY;
-        }
+        ArrayList barai = new ArrayList(1);
+        
 
         public Input()
         {
@@ -79,7 +73,8 @@ namespace holy_water
         }
         
         private void button2_Click(object sender, EventArgs e)
-        {
+        {   
+
             StreamWriter reset = new StreamWriter("Bar_data.txt");
             reset.Write("");
             reset.Close();
