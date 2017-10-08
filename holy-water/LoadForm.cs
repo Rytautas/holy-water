@@ -9,14 +9,14 @@ namespace holy_water
 {
     class LoadForm
     {
-      public void openivedimas()
+      public void openinput()
         {
-            Ivedimas iv = new Ivedimas();
+            Input iv = new Input();
             iv.Show();
         }
-      public void openskale()
+      public void openscale()
         {
-            Skale sk = new Skale();
+            Scale sk = new Scale();
             sk.Show();
         }
     }

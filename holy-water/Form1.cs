@@ -18,15 +18,15 @@ namespace holy_water
         private void button3_Click(object sender, EventArgs e)
         {
             LoadForm test = new LoadForm();
-            test.openivedimas();
+            test.openinput();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                LoadForm loadskale = new LoadForm();
-                loadskale.openskale();
+                LoadForm loadscale = new LoadForm();
+                loadscale.openscale();
             }
             else
             {
@@ -36,19 +36,19 @@ namespace holy_water
         }
         private void opennewform (object obj)
         {
-            Application.Run(new Skale());
+            Application.Run(new Scale());
         }
-        private void opennewformivedimas(object obj)
+        private void opennewforminput(object obj)
         {
-            Application.Run(new Ivedimas());
+            Application.Run(new Input());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                LoadForm loadivedimas = new LoadForm();
-                loadivedimas.openivedimas();
+                LoadForm loadinput = new LoadForm();
+                loadinput.openinput();
             }
             else
             {

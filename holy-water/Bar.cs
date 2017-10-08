@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace holy_water
 {
-    public class Baras
+    public class Bar
         {
             public String name;
             public double volume;

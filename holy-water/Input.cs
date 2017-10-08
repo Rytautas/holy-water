@@ -7,7 +7,7 @@ namespace holy_water
 {
     public partial class Input : Form
     {
-        ArrayList barai = new ArrayList(1);
+        ArrayList bars = new ArrayList(1);
         
 
         public Input()
