@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace holy_water
 {
     public partial class Form1 : Form
     {
-        Thread th;
         public Form1()
         {
             InitializeComponent();
@@ -19,57 +17,35 @@ namespace holy_water
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            LoadForm test = new LoadForm();
+            test.openivedimas();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {   if (checkBox1.CheckState == CheckState.Checked)
+        {
+            if (checkBox1.CheckState == CheckState.Checked)
             {
-                th = new Thread(opennewform);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
+                LoadForm loadskale = new LoadForm();
+                loadskale.openskale();
             }
             else
             {
-                DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
-    MessageBoxDefaultButton.Button2);
-                if (result1 == DialogResult.Yes)
-                {
-                    MessageBox.Show("You are allowed to drink");
-                    checkBox1.Checked = true;
-
-                }
-                else MessageBox.Show("Sorry, you are underaged");
+                Underage checkage = new Underage();
+                if (checkage.Msg() == true) checkBox1.Checked = true;
             }
-        }
-        private void opennewform (object obj)
-        {
-            Application.Run(new Skale());
-        }
-        private void opennewformivedimas(object obj)
-        {
-            Application.Run(new Ivedimas());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                th = new Thread(opennewformivedimas);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
+                LoadForm loadivedimas = new LoadForm();
+                loadivedimas.openivedimas();
             }
             else
             {
-                DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
-    MessageBoxDefaultButton.Button2);
-                if (result1 == DialogResult.Yes)
-                {
-                    MessageBox.Show("You are allowed to drink");
-                    checkBox1.Checked = true;
-
-                }
-                else MessageBox.Show("Sorry, you are underaged");
+                Underage checkage = new Underage();
+                if (checkage.Msg() == true) checkBox1.Checked = true;
             }
         }
 

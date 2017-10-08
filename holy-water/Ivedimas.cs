@@ -8,13 +8,7 @@ namespace holy_water
     public partial class Ivedimas : Form
     {
         ArrayList barai = new ArrayList(1);
-        public class Baras
-        {
-            public String name;
-            public double volume;
-            public int percentage;
-            public double locX, locY;
-        }
+        
 
         public Ivedimas()
         {
@@ -57,7 +51,6 @@ namespace holy_water
                 locY = Convert.ToDouble(textBox6.Text)
             };
             // needs to handle exceptions thrown, when fields are left empty
-
             comboBox1.Items.Add(bar.name);
             barai.Add(bar);
         }
@@ -73,7 +66,8 @@ namespace holy_water
         }
         
         private void button2_Click(object sender, EventArgs e)
-        {
+        {   
+
             StreamWriter reset = new StreamWriter("Bar_data.txt");
             reset.Write("");
             reset.Close();
