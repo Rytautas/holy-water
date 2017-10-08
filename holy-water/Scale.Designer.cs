@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class Skale
+    partial class Scale
     {
         /// <summary>
         /// Required designer variable.
@@ -78,7 +78,7 @@
             this.Name = "Skale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scale";
-            this.Load += new System.EventHandler(this.Skale_Load);
+            this.Load += new System.EventHandler(this.Scale_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

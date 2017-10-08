@@ -27,10 +27,10 @@ C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\holy-water.exe
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\holy-water.pdb
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.csprojResolveAssemblyReference.cache
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Form1.resources
-C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Ivedimas.resources
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Properties.Resources.resources
-C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Skale.resources
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.csproj.GenerateResource.Cache
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.csproj.CoreCompileInputs.cache
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.exe
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.pdb
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Input.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Scale.resources

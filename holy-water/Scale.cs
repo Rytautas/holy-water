@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class Skale : Form
+    public partial class Scale : Form
     {
-        public Skale()
+        public Scale()
         {
             InitializeComponent();
         }
 
-        private void Skale_Load(object sender, EventArgs e)
+        private void Scale_Load(object sender, EventArgs e)
         {
 
         }

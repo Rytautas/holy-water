@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class Ivedimas
+    partial class Input
     {
         /// <summary>
         /// Required designer variable.
@@ -175,7 +175,7 @@
             this.Name = "Ivedimas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manual Input";
-            this.Load += new System.EventHandler(this.Ivedimas_Load);
+            this.Load += new System.EventHandler(this.Input_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

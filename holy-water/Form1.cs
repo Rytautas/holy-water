@@ -44,11 +44,11 @@ namespace holy_water
         }
         private void opennewform (object obj)
         {
-            Application.Run(new Skale());
+            Application.Run(new Scale());
         }
         private void opennewformivedimas(object obj)
         {
-            Application.Run(new Ivedimas());
+            Application.Run(new Input());
         }
 
         private void button2_Click(object sender, EventArgs e)
