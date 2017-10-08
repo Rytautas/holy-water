@@ -48,18 +48,24 @@ namespace holy_water
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Bar bar = new Bar
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
             {
-                name = textBox1.Text,
-                volume = Convert.ToDouble(textBox2.Text),
-                percentage = Int32.Parse(textBox3.Text),
-                locX = Convert.ToDouble(textBox5.Text),
-                locY = Convert.ToDouble(textBox6.Text)
-            };
-            // needs to handle exceptions thrown, when fields are left empty
-
-            comboBox1.Items.Add(bar.name);
-            bars.Add(bar);
+                Bar bar = new Bar
+                {
+                    name = textBox1.Text,
+                    volume = Convert.ToDouble(textBox2.Text),
+                    percentage = Int32.Parse(textBox3.Text),
+                    locX = Convert.ToDouble(textBox5.Text),
+                    locY = Convert.ToDouble(textBox6.Text)
+                };
+                
+                comboBox1.Items.Add(bar.name);
+                bars.Add(bar);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the fields");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

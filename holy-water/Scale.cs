@@ -34,7 +34,6 @@ namespace holy_water
         {
             StreamWriter sw = File.AppendText("text.txt");
             sw.WriteLine(textBox1.Text);
-            sw.Flush();
             sw.Close();
         }
     }
