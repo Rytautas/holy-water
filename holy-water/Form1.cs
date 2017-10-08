@@ -46,7 +46,7 @@ namespace holy_water
         {
             Application.Run(new Scale());
         }
-        private void opennewformivedimas(object obj)
+        private void opennewforminput(object obj)
         {
             Application.Run(new Input());
         }
@@ -55,7 +55,7 @@ namespace holy_water
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                th = new Thread(opennewformivedimas);
+                th = new Thread(opennewforminput);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
