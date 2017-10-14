@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -17,8 +17,7 @@ namespace holy_water
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadForm test = new LoadForm();
-            test.openinput();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +59,11 @@ namespace holy_water
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

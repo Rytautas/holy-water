@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace holy_water
 {
@@ -17,7 +12,6 @@ namespace holy_water
             {
                 MessageBox.Show("You are allowed to drink");
                 return true;
-
             }
             else MessageBox.Show("Sorry, you are underaged");
             return false;
