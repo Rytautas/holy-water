@@ -27,7 +27,7 @@ namespace holy_water
         }
         private void opennewform(object obj)
         {
-            Application.Run(new Form1());
+            Application.Run(new MainMenu());
         }
 
         private void button2_Click(object sender, EventArgs e)
