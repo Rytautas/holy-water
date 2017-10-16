@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bar.cs" />
+    <Compile Include="FilePrep.cs" />
     <Compile Include="LoadForm.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -58,6 +59,11 @@
     </Compile>
     <Compile Include="Input.Designer.cs">
       <DependentUpon>Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="Scale.cs">
       <SubType>Form</SubType>
@@ -84,6 +90,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scale.resx">
       <DependentUpon>Scale.cs</DependentUpon>
     </EmbeddedResource>
