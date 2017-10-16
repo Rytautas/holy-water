@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.IO;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace holy_water
 {
     public partial class Input : Form
     {
-        ArrayList bars = new ArrayList(1);
+        List<Bar> bars = new List<Bar>();
         
 
         public Input()
@@ -17,22 +16,13 @@ namespace holy_water
 
         private void Input_Load(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("Bar_data.txt");
-            string line = sr.ReadLine();
-            while (line != null)
+            FilePrep filePrep = new FilePrep();
+            bars = filePrep.Read("Bar_data.txt");
+            foreach(Bar bar in bars)
             {
-                string[] split = line.Split(' ');
-                Bar temp = new Bar();
-                temp.name = split[0];
-                comboBox1.Items.Add(split[0]);
-                temp.volume = Convert.ToDouble(split[1]);
-                temp.percentage = Int32.Parse(split[2]);
-                temp.locX = Convert.ToDouble(split[3]);
-                temp.locY = Convert.ToDouble(split[4]);
-                bars.Add(temp);
-                line = sr.ReadLine();
+                comboBox1.Items.Add(bar.name);
             }
-            sr.Close();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,19 +34,10 @@ namespace holy_water
         {
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
             {
-                try { 
-                Bar bar = new Bar
-                {
-
-                    name = textBox1.Text,
-                    volume = Convert.ToDouble(textBox2.Text),
-                    percentage = Int32.Parse(textBox3.Text),
-                    locX = Convert.ToDouble(textBox5.Text),
-                    locY = Convert.ToDouble(textBox6.Text)
-                };
-
-                comboBox1.Items.Add(bar.name);
-                bars.Add(bar);
+                try {
+                    Bar bar = new Bar(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox6.Text), Int32.Parse(textBox3.Text));
+                    comboBox1.Items.Add(bar.name);
+                    bars.Add(bar);
                 }
                 catch(FormatException ex)
                 {
@@ -80,24 +61,26 @@ namespace holy_water
         }
         
         private void button2_Click(object sender, EventArgs e)
-        {   
-
-            StreamWriter reset = new StreamWriter("Bar_data.txt");
-            reset.Write("");
-            reset.Close();
-
-            StreamWriter wr = new StreamWriter("Bar_data.txt", true);
-            foreach(Bar a in bars)
-            {
-                wr.WriteLine(a.name + " " + a.volume + " " + a.percentage + " " + a.locX + " " + a.locY);
-            }
-            wr.Close();
+        {
+            FilePrep filePrep = new FilePrep();
+            filePrep.Write("Bar_data.txt", bars);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            bars.RemoveAt(comboBox1.SelectedIndex);
-            comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
+            if (comboBox1.Items.Count == 0)
+            {
+                MessageBox.Show("There is nothing to remove");
+            }
+            else
+            {
+                bars.RemoveAt(comboBox1.SelectedIndex);
+                comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
+                if (comboBox1.Items.Count != 0)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+            }
         }
     }
 }
