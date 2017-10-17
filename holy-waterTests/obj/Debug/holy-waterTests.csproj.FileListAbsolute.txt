@@ -1,0 +1,16 @@
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\holy-waterTests.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\holy-waterTests.pdb
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\holy-water.exe
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\holy-water.pdb
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\holy-water.exe.config
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\obj\Debug\holy-waterTests.csprojResolveAssemblyReference.cache
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\obj\Debug\holy-waterTests.csproj.CoreCompileInputs.cache
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\obj\Debug\holy-waterTests.dll
+C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-waterTests\obj\Debug\holy-waterTests.pdb
