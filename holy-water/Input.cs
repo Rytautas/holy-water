@@ -1,9 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Linq;
 
 namespace holy_water
 {
@@ -88,21 +86,16 @@ namespace holy_water
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Bar[] bars = this.bars.ToArray();
-            Regex reg = new Regex(@"[\d]");
+            Filter filter = new Filter();
             string input = Interaction.InputBox("Pasirinkite min alaus lygi:");
-            if(reg.IsMatch(input))
+            IEnumerable<Bar> selectedBars = filter.FilterByPerc(this.bars, input);
+            comboBox1.Items.Clear();
+            foreach(Bar bar in selectedBars)
             {
-                var selectedBars = from bar in bars
-                                   where bar.percentage >= Int32.Parse(input)
-                                   select bar;
-                comboBox1.Items.Clear();
-                foreach(Bar bar in selectedBars)
-                {
-                    comboBox1.Items.Add(bar.name);
-                    comboBox1.SelectedIndex = 0;
-                }
+                comboBox1.Items.Add(bar.name);
+                comboBox1.SelectedIndex = 0;
             }
+        
         }
 
         private void button6_Click(object sender, EventArgs e)
