@@ -35,3 +35,17 @@ C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-wate
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Input.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Scale.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Resources.Resource1.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\bin\Debug\holy-water.exe.config
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\bin\Debug\holy-water.exe
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\bin\Debug\holy-water.pdb
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.csprojResolveAssemblyReference.cache
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.MainMenu.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Input.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Properties.Resources.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Resources.Resource1.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Scale.resources
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.csproj.GenerateResource.Cache
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.exe
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.pdb
+C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Bardata.resources

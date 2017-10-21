@@ -5,7 +5,7 @@ namespace holy_water
     class Underage
     {
         public bool Msg()
-        {
+        {   
             DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
             MessageBoxDefaultButton.Button2);
             if (result1 == DialogResult.Yes)
