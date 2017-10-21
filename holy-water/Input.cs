@@ -24,6 +24,7 @@ namespace holy_water
                 comboBox1.Items.Add(bar.name);
             }
             comboBox1.SelectedIndex = 0;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

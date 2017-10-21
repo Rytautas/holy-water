@@ -32,14 +32,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.bardatabutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(194, 68);
+            this.Button1.Location = new System.Drawing.Point(218, 85);
             this.Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(122, 41);
+            this.Button1.Size = new System.Drawing.Size(137, 51);
             this.Button1.TabIndex = 0;
             this.Button1.Text = "Scale";
             this.Button1.UseVisualStyleBackColor = true;
@@ -47,10 +48,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(20, 68);
+            this.button2.Location = new System.Drawing.Point(22, 85);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 41);
+            this.button2.Size = new System.Drawing.Size(137, 51);
             this.button2.TabIndex = 3;
             this.button2.Text = "Manual Input";
             this.button2.UseVisualStyleBackColor = true;
@@ -59,10 +60,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(20, 270);
+            this.checkBox1.Location = new System.Drawing.Point(22, 338);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 21);
+            this.checkBox1.Size = new System.Drawing.Size(62, 24);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "18+";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -70,20 +71,33 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(218, 260);
+            this.button4.Location = new System.Drawing.Point(245, 325);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 31);
+            this.button4.Size = new System.Drawing.Size(110, 39);
             this.button4.TabIndex = 5;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // bardatabutton
+            // 
+            this.bardatabutton.Location = new System.Drawing.Point(124, 171);
+            this.bardatabutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bardatabutton.Name = "bardatabutton";
+            this.bardatabutton.Size = new System.Drawing.Size(137, 51);
+            this.bardatabutton.TabIndex = 6;
+            this.bardatabutton.Text = "Bar Data";
+            this.bardatabutton.UseVisualStyleBackColor = true;
+            this.bardatabutton.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::holy_water.Properties.Resources.dribbble;
-            this.ClientSize = new System.Drawing.Size(341, 314);
+            this.ClientSize = new System.Drawing.Size(384, 392);
+            this.Controls.Add(this.bardatabutton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
@@ -105,6 +119,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bardatabutton;
     }
 }
 

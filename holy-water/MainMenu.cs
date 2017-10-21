@@ -24,22 +24,14 @@ namespace holy_water
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                LoadForm loadscale = new LoadForm();
-                loadscale.openscale();
+                LoadForm loadinput = new LoadForm();
+                loadinput.openinput();
             }
             else
             {
                 Underage checkage = new Underage();
                 if (checkage.Msg() == true) checkBox1.Checked = true;
             }
-        }
-        private void opennewform (object obj)
-        {
-            Application.Run(new Scale());
-        }
-        private void opennewforminput(object obj)
-        {
-            Application.Run(new Input());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,6 +56,11 @@ namespace holy_water
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Average avg = new Average();
         }
     }
 }
