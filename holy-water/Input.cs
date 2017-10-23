@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace holy_water
@@ -8,7 +9,7 @@ namespace holy_water
     public partial class Input : Form
     {
         List<Bar> bars = new List<Bar>();
-        
+        public List<Bar> selectedBars;
 
         public Input()
         {
@@ -24,22 +25,34 @@ namespace holy_water
                 comboBox1.Items.Add(bar.name);
             }
             comboBox1.SelectedIndex = 0;
-            
+            panel2.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
             {
                 try {
-                    Bar bar = new Bar(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox6.Text), Int32.Parse(textBox3.Text));
-                    comboBox1.Items.Add(bar.name);
-                    bars.Add(bar);
+                    Bar newBar = new Bar(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox6.Text), Int32.Parse(textBox3.Text));
+                    bool match = false;
+                    foreach (Bar bar in bars)
+                    {
+                        if(bar.name == newBar.name)
+                        {
+                            bar.CountAverage(newBar);
+                            match = true;
+                        }
+                    }
+                    if(match != true)
+                    {
+                        comboBox1.Items.Add(newBar.name);
+                        bars.Add(newBar);
+                    }
                 }
                 catch(FormatException ex)
                 {
@@ -54,21 +67,21 @@ namespace holy_water
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Bar bar = (Bar) bars[comboBox1.SelectedIndex];
+            Bar bar = bars[comboBox1.SelectedIndex];
             textBox1.Text = bar.name;
             textBox2.Text = bar.volume.ToString("F2");
-            textBox3.Text = bar.percentage.ToString();
             textBox5.Text = bar.locX.ToString("F2");
             textBox6.Text = bar.locY.ToString("F2");
+            textBox4.Text = bar.Average.ToString("F2");
         }
         
-        private void button2_Click(object sender, EventArgs e)
+        private void SaveToFile_Click(object sender, EventArgs e)
         {
             FilePrep filePrep = new FilePrep();
             filePrep.Write("Bar_data.txt", bars);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Remove_Click(object sender, EventArgs e)
         {
             if (comboBox1.Items.Count == 0)
             {
@@ -85,21 +98,15 @@ namespace holy_water
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        public void FilterButtonClick(object sender, EventArgs e)
         {
-            Filter filter = new Filter();
-            string input = Interaction.InputBox("Pasirinkite min alaus lygi:");
-            IEnumerable<Bar> selectedBars = filter.FilterByPerc(this.bars, input);
-            comboBox1.Items.Clear();
-            foreach(Bar bar in selectedBars)
-            {
-                comboBox1.Items.Add(bar.name);
-                comboBox1.SelectedIndex = 0;
-            }
-        
+            panel2.Show();
+            FilterComboBox.Items.Add("Filter by percentage");
+            FilterComboBox.Items.Add("Filter by average");
+            FilterComboBox.SelectedIndex = 0;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void ResetFilter_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
             foreach(Bar bar in bars)
@@ -107,6 +114,33 @@ namespace holy_water
                 comboBox1.Items.Add(bar.name);
                 comboBox1.SelectedIndex = 0;
             }
+        }
+
+        private void DataFilter_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Filter();
+            int index = FilterComboBox.SelectedIndex;
+            List<Bar> selectedBars = filter.FilterCondition(index, bars);
+            if(selectedBars == null)
+            {
+                MessageBox.Show("The returned list is empty. Try again with different criteria or list");
+            }
+            else
+            {
+                panel2.Hide();
+                comboBox1.Items.Clear();
+                foreach(Bar bar in selectedBars)
+                {
+                    comboBox1.Items.Add(bar.name);
+                }
+                comboBox1.SelectedIndex = 0;
+            }
+        }
+
+        private void BackTo_Click(object sender, EventArgs e)
+        {
+            panel1.Show();
+            panel2.Hide();
         }
     }
 }

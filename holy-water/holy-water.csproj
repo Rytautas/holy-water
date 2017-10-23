@@ -46,10 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Average.cs" />
     <Compile Include="Bar.cs" />
-    <Compile Include="FilePrep.cs" />
     <Compile Include="Filter.cs" />
+    <Compile Include="FilePrep.cs" />
     <Compile Include="LoadForm.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>

@@ -14,7 +14,7 @@ namespace holy_water
             while (line != null)
             {
                 string[] split = line.Split(' ');
-                bars.Add(new Bar(split[0], Convert.ToDouble(split[1]), Convert.ToDouble(split[3]), Convert.ToDouble(split[4]), Int32.Parse(split[2])));
+                bars.Add(new Bar(split[0], Convert.ToDouble(split[1]), Convert.ToDouble(split[3]), Convert.ToDouble(split[4]), Int32.Parse(split[2]), Convert.ToDouble(split[5]), Int32.Parse(split[6])));
                 line = sr.ReadLine();
             }
             sr.Close();
@@ -30,7 +30,7 @@ namespace holy_water
             StreamWriter wr = new StreamWriter(fileName, true);
             foreach (Bar bar in bars)
             {
-                wr.WriteLine(bar.name + " " + bar.volume + " " + bar.percentage + " " + bar.locX + " " + bar.locY);
+                wr.WriteLine(bar.name + " " + bar.volume + " " + bar.percentage + " " + bar.locX + " " + bar.locY + " " + bar.Average + " " + bar.Count);
             }
             wr.Close();
         }
