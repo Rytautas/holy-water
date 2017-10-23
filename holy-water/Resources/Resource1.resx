@@ -150,6 +150,9 @@
   <data name="NonNumeric" xml:space="preserve">
     <value>You have entered non-numeric characters</value>
   </data>
+  <data name="NothingToShow" xml:space="preserve">
+    <value>Nothing to show</value>
+  </data>
   <data name="ReturnEmpty" xml:space="preserve">
     <value>The returned list is empty. Try again with different criteria or list</value>
   </data>

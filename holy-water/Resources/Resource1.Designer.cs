@@ -160,6 +160,15 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nothing to show.
+        /// </summary>
+        internal static string NothingToShow {
+            get {
+                return ResourceManager.GetString("NothingToShow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The returned list is empty. Try again with different criteria or list.
         /// </summary>
         internal static string ReturnEmpty {

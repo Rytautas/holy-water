@@ -102,10 +102,10 @@ namespace holy_water
         {
             panel2.Show();
 
-            if (!FilterComboBox.Items.Contains("Filter by percentage") && !FilterComboBox.Items.Contains("Filter by average"))
+            if (!FilterComboBox.Items.Contains(Resource1.FilterConditionPerc) && !FilterComboBox.Items.Contains(Resource1.FilterConditionAvg))
             {
-                FilterComboBox.Items.Add("Filter by percentage");
-                FilterComboBox.Items.Add("Filter by average");
+                FilterComboBox.Items.Add(Resource1.FilterConditionPerc);
+                FilterComboBox.Items.Add(Resource1.FilterConditionAvg);
                 FilterComboBox.SelectedIndex = 0;
             }
         }
@@ -141,7 +141,7 @@ namespace holy_water
                     textBox4.Clear();
                     textBox5.Clear();
                     textBox6.Clear();
-                    MessageBox.Show("Nothing to show");
+                    MessageBox.Show(Resource1.NothingToShow);
                 }
                 foreach(Bar bar in selectedBars)
                 {
