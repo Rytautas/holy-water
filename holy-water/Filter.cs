@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using holy_water.Resources;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,11 @@ namespace holy_water
             switch (index)
             {
                 case 0:
-                    input = Interaction.InputBox("Enter the minimal level for filter");
+                    input = Interaction.InputBox(Resource1.MinimalFilter);
                     selectedBars = FilterByPerc(bars, input);
                     break;
                 case 1:
-                    input = Interaction.InputBox("Enter the minimal level for filter");
+                    input = Interaction.InputBox(Resource1.MinimalFilter);
                     selectedBars = FilterByAvg(bars, input);
                     break;
                 default:
@@ -39,7 +40,7 @@ namespace holy_water
 
         public IEnumerable<Bar> FilterByPerc(List<Bar> bars, string input)
         {
-            Regex reg = new Regex(@"^[\d]+$");
+            Regex reg = new Regex(Resource1.FilterNumberReg);
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars
@@ -52,7 +53,8 @@ namespace holy_water
 
         public IEnumerable<Bar> FilterByAvg(List<Bar> bars, string input)
         {
-            Regex reg = new Regex(@"^[\d]+$");
+
+            Regex reg = new Regex(Resource1.FilterNumberReg);
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars

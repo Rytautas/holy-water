@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace holy_water
         private void Input_Load(object sender, EventArgs e)
         {
             FilePrep filePrep = new FilePrep();
-            bars = filePrep.Read("Bar_data.txt");
+            bars = filePrep.Read(Resource1.FileName);
             foreach(Bar bar in bars)
             {
                 comboBox1.Items.Add(bar.name);
@@ -36,7 +37,7 @@ namespace holy_water
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
             {
                 try {
-                    Bar newBar = new Bar(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox6.Text), Int32.Parse(textBox3.Text));
+                    Bar newBar = new Bar(textBox1.Text, textBox2.Text.ToDouble(), textBox5.Text.ToDouble(), textBox6.Text.ToDouble(), Int32.Parse(textBox3.Text));
                     bool match = false;
                     foreach (Bar bar in bars)
                     {
@@ -54,12 +55,12 @@ namespace holy_water
                 }
                 catch(FormatException ex)
                 {
-                    MessageBox.Show("You have entered non-numeric characters");
+                    MessageBox.Show(Resource1.NonNumeric);
                 }
             }
             else
             {
-                MessageBox.Show("Please fill all the fields");
+                MessageBox.Show(Resource1.EmptyFields);
             }
         }
 
@@ -77,14 +78,14 @@ namespace holy_water
         private void SaveToFile_Click(object sender, EventArgs e)
         {
             FilePrep filePrep = new FilePrep();
-            filePrep.Write("Bar_data.txt", bars);
+            filePrep.Write(Resource1.FileName, bars);
         }
 
         private void Remove_Click(object sender, EventArgs e)
         {
             if (comboBox1.Items.Count == 0)
             {
-                MessageBox.Show("There is nothing to remove");
+                MessageBox.Show(Resource1.EmptyList);
             }
             else
             {
@@ -100,13 +101,13 @@ namespace holy_water
         public void FilterButtonClick(object sender, EventArgs e)
         {
             panel2.Show();
-            if(!FilterComboBox.Items.Contains("Filter by percentage") && !FilterComboBox.Items.Contains("Filter by average"))
+
+            if (!FilterComboBox.Items.Contains("Filter by percentage") && !FilterComboBox.Items.Contains("Filter by average"))
             {
                 FilterComboBox.Items.Add("Filter by percentage");
                 FilterComboBox.Items.Add("Filter by average");
                 FilterComboBox.SelectedIndex = 0;
             }
-            
         }
 
         private void ResetFilter_Click(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace holy_water
             List<Bar> selectedBars = filter.FilterCondition(index, bars);
             if(selectedBars == null || selectedBars.Count == 0)
             {
-                MessageBox.Show("The returned list is empty. Try again with different criteria or list");
+                MessageBox.Show(Resource1.ReturnEmpty);
             }
             else
             {

@@ -9,15 +9,17 @@ namespace holy_water
         public List<Bar> Read(String fileName)
         {
             List<Bar> bars = new List<Bar>();
-            StreamReader sr = new StreamReader(fileName);
-            string line = sr.ReadLine();
-            while (line != null)
+            
+            using(StreamReader sr = new StreamReader(fileName))
             {
-                string[] split = line.Split(' ');
-                bars.Add(new Bar(split[0], Convert.ToDouble(split[1]), Convert.ToDouble(split[3]), Convert.ToDouble(split[4]), Int32.Parse(split[2]), Convert.ToDouble(split[5]), Int32.Parse(split[6])));
-                line = sr.ReadLine();
+                string line = sr.ReadLine();
+                while (line != null)
+                {
+                    string[] split = line.Split(' ');
+                    bars.Add(new Bar(split[0], split[1].ToDouble(), split[3].ToDouble(), split[4].ToDouble(), Int32.Parse(split[2]), split[5].ToDouble(), Int32.Parse(split[6])));
+                    line = sr.ReadLine();
+                }
             }
-            sr.Close();
             return bars;
         }
 
@@ -27,12 +29,13 @@ namespace holy_water
             reset.Write("");
             reset.Close();
 
-            StreamWriter wr = new StreamWriter(fileName, true);
-            foreach (Bar bar in bars)
+            using (StreamWriter wr = new StreamWriter(fileName, true))
             {
-                wr.WriteLine(bar.name + " " + bar.volume + " " + bar.percentage + " " + bar.locX + " " + bar.locY + " " + bar.Average + " " + bar.Count);
+                foreach (Bar bar in bars)
+                {
+                    wr.WriteLine(bar.name + " " + bar.volume + " " + bar.percentage + " " + bar.locX + " " + bar.locY + " " + bar.Average + " " + bar.Count);
+                }
             }
-            wr.Close();
         }
     }
 }

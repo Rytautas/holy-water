@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using holy_water.Resources;
+using System.Windows.Forms;
 
 namespace holy_water
 {
@@ -6,14 +7,14 @@ namespace holy_water
     {
         public bool Msg()
         {   
-            DialogResult result1 = MessageBox.Show("Are you 18+ years old?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
+            DialogResult result1 = MessageBox.Show(Resource1.AgeCheck, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.None,
             MessageBoxDefaultButton.Button2);
             if (result1 == DialogResult.Yes)
             {
-                MessageBox.Show("You are allowed to drink");
+                MessageBox.Show(Resource1.AgeAllowed);
                 return true;
             }
-            else MessageBox.Show("Sorry, you are underaged");
+            else MessageBox.Show(Resource1.AgeDenied);
             return false;
         }
     }

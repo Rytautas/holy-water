@@ -118,12 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AgeAllowed" xml:space="preserve">
-    <value>"You are allowed to drink"</value>
+    <value>You are allowed to drink</value>
   </data>
   <data name="AgeCheck" xml:space="preserve">
-    <value>"Are you 18+ years old?"</value>
+    <value>Are you 18+ years old?</value>
   </data>
   <data name="AgeDenied" xml:space="preserve">
-    <value>"Sorry, you are underaged"</value>
+    <value>Sorry, you are underaged</value>
+  </data>
+  <data name="EmptyFields" xml:space="preserve">
+    <value>Please fill all the fields</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>There is nothing to remove</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Bar_Data.txt</value>
+  </data>
+  <data name="FilterConditionAvg" xml:space="preserve">
+    <value>Filter by average</value>
+  </data>
+  <data name="FilterConditionPerc" xml:space="preserve">
+    <value>Filter by percentage</value>
+  </data>
+  <data name="FilterNumberReg" xml:space="preserve">
+    <value>@"^[\d]+$"</value>
+  </data>
+  <data name="MinimalFilter" xml:space="preserve">
+    <value>Enter the minimal level for filter</value>
+  </data>
+  <data name="NonNumeric" xml:space="preserve">
+    <value>You have entered non-numeric characters</value>
+  </data>
+  <data name="ReturnEmpty" xml:space="preserve">
+    <value>The returned list is empty. Try again with different criteria or list</value>
   </data>
 </root>

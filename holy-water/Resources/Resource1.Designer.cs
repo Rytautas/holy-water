@@ -61,7 +61,7 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;You are allowed to drink&quot;.
+        ///   Looks up a localized string similar to You are allowed to drink.
         /// </summary>
         internal static string AgeAllowed {
             get {
@@ -70,7 +70,7 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Are you 18+ years old?&quot;.
+        ///   Looks up a localized string similar to Are you 18+ years old?.
         /// </summary>
         internal static string AgeCheck {
             get {
@@ -79,11 +79,92 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Sorry, you are underaged&quot;.
+        ///   Looks up a localized string similar to Sorry, you are underaged.
         /// </summary>
         internal static string AgeDenied {
             get {
                 return ResourceManager.GetString("AgeDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill all the fields.
+        /// </summary>
+        internal static string EmptyFields {
+            get {
+                return ResourceManager.GetString("EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is nothing to remove.
+        /// </summary>
+        internal static string EmptyList {
+            get {
+                return ResourceManager.GetString("EmptyList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bar_Data.txt.
+        /// </summary>
+        internal static string FileName {
+            get {
+                return ResourceManager.GetString("FileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter by average.
+        /// </summary>
+        internal static string FilterConditionAvg {
+            get {
+                return ResourceManager.GetString("FilterConditionAvg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter by percentage.
+        /// </summary>
+        internal static string FilterConditionPerc {
+            get {
+                return ResourceManager.GetString("FilterConditionPerc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @&quot;^[\d]+$&quot;.
+        /// </summary>
+        internal static string FilterNumberReg {
+            get {
+                return ResourceManager.GetString("FilterNumberReg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the minimal level for filter.
+        /// </summary>
+        internal static string MinimalFilter {
+            get {
+                return ResourceManager.GetString("MinimalFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have entered non-numeric characters.
+        /// </summary>
+        internal static string NonNumeric {
+            get {
+                return ResourceManager.GetString("NonNumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The returned list is empty. Try again with different criteria or list.
+        /// </summary>
+        internal static string ReturnEmpty {
+            get {
+                return ResourceManager.GetString("ReturnEmpty", resourceCulture);
             }
         }
     }
