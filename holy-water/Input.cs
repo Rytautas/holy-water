@@ -1,7 +1,5 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace holy_water
@@ -126,7 +124,7 @@ namespace holy_water
             Filter filter = new Filter();
             int index = FilterComboBox.SelectedIndex;
             List<Bar> selectedBars = filter.FilterCondition(index, bars);
-            if(selectedBars == null)
+            if(selectedBars == null || selectedBars.Count == 0)
             {
                 MessageBox.Show("The returned list is empty. Try again with different criteria or list");
             }
@@ -149,7 +147,7 @@ namespace holy_water
                     comboBox1.Items.Add(bar.name);
                     comboBox1.SelectedIndex = 0;
                 }
-               
+                comboBox1.SelectedIndex = 0;
             }
         }
 

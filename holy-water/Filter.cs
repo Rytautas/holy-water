@@ -39,7 +39,7 @@ namespace holy_water
 
         public IEnumerable<Bar> FilterByPerc(List<Bar> bars, string input)
         {
-            Regex reg = new Regex(@"[\d]");
+            Regex reg = new Regex(@"^[\d]+$");
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars
@@ -52,7 +52,7 @@ namespace holy_water
 
         public IEnumerable<Bar> FilterByAvg(List<Bar> bars, string input)
         {
-            Regex reg = new Regex(@"[\d]");
+            Regex reg = new Regex(@"^[\d]+$");
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars
