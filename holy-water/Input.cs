@@ -70,6 +70,7 @@ namespace holy_water
             Bar bar = bars[comboBox1.SelectedIndex];
             textBox1.Text = bar.name;
             textBox2.Text = bar.volume.ToString("F2");
+            textBox3.Text = bar.percentage.ToString("F2");
             textBox5.Text = bar.locX.ToString("F2");
             textBox6.Text = bar.locY.ToString("F2");
             textBox4.Text = bar.Average.ToString("F2");
@@ -101,9 +102,13 @@ namespace holy_water
         public void FilterButtonClick(object sender, EventArgs e)
         {
             panel2.Show();
-            FilterComboBox.Items.Add("Filter by percentage");
-            FilterComboBox.Items.Add("Filter by average");
-            FilterComboBox.SelectedIndex = 0;
+            if(!FilterComboBox.Items.Contains("Filter by percentage") && !FilterComboBox.Items.Contains("Filter by average"))
+            {
+                FilterComboBox.Items.Add("Filter by percentage");
+                FilterComboBox.Items.Add("Filter by average");
+                FilterComboBox.SelectedIndex = 0;
+            }
+            
         }
 
         private void ResetFilter_Click(object sender, EventArgs e)
@@ -129,11 +134,22 @@ namespace holy_water
             {
                 panel2.Hide();
                 comboBox1.Items.Clear();
+                if(selectedBars.Count == 0)
+                {
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    MessageBox.Show("Nothing to show");
+                }
                 foreach(Bar bar in selectedBars)
                 {
                     comboBox1.Items.Add(bar.name);
+                    comboBox1.SelectedIndex = 0;
                 }
-                comboBox1.SelectedIndex = 0;
+               
             }
         }
 
