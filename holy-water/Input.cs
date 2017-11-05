@@ -44,6 +44,7 @@ namespace holy_water
                         if(bar.name == newBar.name)
                         {
                             bar.CountAverage(newBar);
+                            textBox4.Text = bar.Average.ToString("F2");
                             match = true;
                         }
                     }

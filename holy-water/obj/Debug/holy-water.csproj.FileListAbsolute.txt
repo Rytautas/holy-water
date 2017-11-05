@@ -48,7 +48,6 @@ C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.csproj.
 C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.exe
 C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy-water.pdb
 C:\Users\User\Source\Repos\c#\holy-water\holy-water\obj\Debug\holy_water.Bardata.resources
-C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.FilterUI.resources
 C:\Users\Vartotojas\Desktop\stuff\safekeeping\holy-water\holy-water\bin\Debug\holy-water.exe.config
 C:\Users\Vartotojas\Desktop\stuff\safekeeping\holy-water\holy-water\bin\Debug\holy-water.exe
 C:\Users\Vartotojas\Desktop\stuff\safekeeping\holy-water\holy-water\bin\Debug\holy-water.pdb

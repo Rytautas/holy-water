@@ -37,12 +37,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.FilterComboBox = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -55,6 +49,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.FilterComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -159,68 +159,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(527, 285);
             this.panel1.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.FilterComboBox);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(12, 79);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(524, 279);
-            this.panel2.TabIndex = 11;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(70, 148);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(107, 43);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Back to data view";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.BackTo_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(359, 147);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(107, 43);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Filter";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.DataFilter_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(54, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 17);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Filter condition";
-            // 
-            // FilterComboBox
-            // 
-            this.FilterComboBox.AutoCompleteCustomSource.AddRange(new string[] {
-            "Filter by percentage",
-            "Filter by average"});
-            this.FilterComboBox.FormattingEnabled = true;
-            this.FilterComboBox.Location = new System.Drawing.Point(197, 47);
-            this.FilterComboBox.Name = "FilterComboBox";
-            this.FilterComboBox.Size = new System.Drawing.Size(288, 24);
-            this.FilterComboBox.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(235, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 24);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Filter";
             // 
             // textBox4
             // 
@@ -328,6 +266,68 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(168, 22);
             this.textBox5.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.FilterComboBox);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(12, 79);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(524, 279);
+            this.panel2.TabIndex = 11;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(70, 148);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(107, 43);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "Back to data view";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.BackTo_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(359, 147);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(107, 43);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Filter";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.DataFilter_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(54, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 17);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Filter condition";
+            // 
+            // FilterComboBox
+            // 
+            this.FilterComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Filter by percentage",
+            "Filter by average"});
+            this.FilterComboBox.FormattingEnabled = true;
+            this.FilterComboBox.Location = new System.Drawing.Point(197, 47);
+            this.FilterComboBox.Name = "FilterComboBox";
+            this.FilterComboBox.Size = new System.Drawing.Size(288, 24);
+            this.FilterComboBox.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(235, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 24);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Filter";
             // 
             // Input
             // 
