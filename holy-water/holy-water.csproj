@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Average.cs" />
     <Compile Include="Bar.cs" />
+    <Compile Include="Stats.cs" />
+    <Compile Include="StatsPrep.cs" />
     <Compile Include="StringExtention.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="FilePrep.cs" />
@@ -77,6 +80,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Underage.cs" />
+    <Compile Include="ViewStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStatistics.Designer.cs">
+      <DependentUpon>ViewStatistics.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Scale.resx">
       <DependentUpon>Scale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStatistics.resx">
+      <DependentUpon>ViewStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
