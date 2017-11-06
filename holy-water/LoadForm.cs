@@ -14,10 +14,10 @@ namespace holy_water
             Input iv = new Input();
             iv.Show();
         }
-      public void openscale()
+      public void openstats()
         {
-            Scale sk = new Scale();
-            sk.Show();
+            ViewStatistics st = new ViewStatistics();
+            st.Show();
         }
     }
 }
