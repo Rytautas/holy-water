@@ -9,28 +9,30 @@ namespace holy_water
 {
     public class Filter
     {
+        public delegate IEnumerable<Bar> FilterDel(List<Bar> bar, string text);
         public List<Bar> FilterCondition(int index, List<Bar> bars)
         {
             string input;
-            IEnumerable<Bar> selectedBars = null;
+            FilterDel selectBars = null;
 
             switch (index)
             {
                 case 0:
                     input = Interaction.InputBox(Resource1.MinimalFilter);
-                    selectedBars = FilterByPerc(bars, input);
+                    selectBars += FilterByPerc;
                     break;
                 case 1:
                     input = Interaction.InputBox(Resource1.MinimalFilter);
-                    selectedBars = FilterByAvg(bars, input);
+                    selectBars += FilterByAvg;
                     break;
                 default:
-                    selectedBars = null;
+                    input = "";
+                    selectBars = null;
                     break;
             }
-            if (selectedBars != null)
+            if (selectBars != null)
             {
-                return new List<Bar>(selectedBars);
+                return new List<Bar>(selectBars(bars, input));
             }
             else
             {
