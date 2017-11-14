@@ -2,7 +2,7 @@
 
 namespace holy_water
 {
-    public struct Bar
+    public class Bar
     {
         private String name;
         private double volume, locX, locY;
