@@ -65,3 +65,4 @@ C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.Input.reso
 C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.Resources.Resource1.resources
 C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.Scale.resources
 C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.ViewStatistics.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.ViewStatistics.resources

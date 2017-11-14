@@ -4,28 +4,43 @@ namespace holy_water
 {
     public struct Bar
     {
-        public String name;
-        public double volume, locX, locY;
-        public int percentage;
-        public int Count { get; private set; }
-        public double Average { get; private set; }
+        private String name;
+        private double volume, locX, locY;
+        private int percentage;
+        private int count;
+        private double average;
 
-        public Bar(string name, double volume, double locX, double locY, int percentage, double average = 0.00, int count = 1)
+        public int Count { get => count; }
+        public double Average { get => average; }
+
+        public int Percentage {
+            get => percentage; 
+            set {
+                percentage = value;
+                CountAverage();
+            }
+        }
+
+        public string Name { get => name; }
+        public double Volume { get => volume;  }
+        public double LocX { get => locX; }
+        public double LocY { get => locY; }
+
+        public Bar(string name, double volume, double locX, double locY, int percentage, double average = 0.0, int count = 1)
         {
             this.name = name;
             this.volume = volume;
             this.locX = locX;
             this.locY = locY;
             this.percentage = percentage;
-            Count = count;
-            Average = average;
+            this.count = count;
+            this.average = average == 0 ? percentage : average;
         }
 
-        public void CountAverage(Bar bar)
+        
+        private void CountAverage()
         {
-            double sum = Count * Average;
-            Average = (sum + bar.percentage) / (Count + 1);
-            Count++;
+            average = (count * average + percentage) / ++count;
         }
     }
 }

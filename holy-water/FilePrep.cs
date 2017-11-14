@@ -15,7 +15,7 @@ namespace holy_water
                 string line = sr.ReadLine();
                 while (line != null)
                 {
-                    string[] split = line.Split(' ');
+                    string[] split = line.Split('\t');
                     bars.Add(new Bar(split[0], split[1].ToDouble(), split[3].ToDouble(), split[4].ToDouble(), Int32.Parse(split[2]), split[5].ToDouble(), Int32.Parse(split[6])));
                     line = sr.ReadLine();
                 }
@@ -33,7 +33,7 @@ namespace holy_water
             {
                 foreach (Bar bar in bars)
                 {
-                    wr.WriteLine(bar.name + " " + bar.volume + " " + bar.percentage + " " + bar.locX + " " + bar.locY + " " + bar.Average + " " + bar.Count);
+                    wr.WriteLine(bar.Name + "\t" + bar.Volume + "\t" + bar.Percentage + "\t" + bar.LocX + "\t" + bar.LocY + "\t" + bar.Average + "\t" + bar.Count);
                 }
             }
         }

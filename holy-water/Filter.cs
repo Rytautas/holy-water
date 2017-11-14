@@ -30,14 +30,24 @@ namespace holy_water
                     selectBars = null;
                     break;
             }
+           
             if (selectBars != null)
             {
-                return new List<Bar>(selectBars(bars, input));
+                IEnumerable<Bar> iBar = selectBars(bars, input);
+                if (iBar == null)
+                    return null;
+                List<Bar> newBarList = new List<Bar>();
+                foreach (Bar bar in iBar)
+                    newBarList.Add(bar);
+                return newBarList;
+
+            
             }
-            else
-            {
+           else
+           {
                 return null;
-            }
+                
+           }
         }
 
         public IEnumerable<Bar> FilterByPerc(List<Bar> bars, string input)
@@ -46,11 +56,15 @@ namespace holy_water
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars
-                                   where bar.percentage >= Int32.Parse(input)
+                                   where bar.Percentage >= Int32.Parse(input)
                                    select bar;
                 return selectedBars;
             }
-            return null;
+            else
+            {
+                return null;
+            }
+           
         }
 
         public IEnumerable<Bar> FilterByAvg(List<Bar> bars, string input)
@@ -64,7 +78,11 @@ namespace holy_water
                                    select bar;
                 return selectedBars;
             }
-            return null;
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

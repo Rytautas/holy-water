@@ -133,7 +133,7 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @&quot;^[\d]+$&quot;.
+        ///   Looks up a localized string similar to ^[0-9]+$.
         /// </summary>
         internal static string FilterNumberReg {
             get {

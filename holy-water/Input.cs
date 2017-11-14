@@ -21,7 +21,7 @@ namespace holy_water
             bars = filePrep.Read(Resource1.FileName);
             foreach(Bar bar in bars)
             {
-                comboBox1.Items.Add(bar.name);
+                comboBox1.Items.Add(bar.Name);
             }
             comboBox1.SelectedIndex = 0;
             panel2.Hide();
@@ -34,24 +34,36 @@ namespace holy_water
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrEmpty(textBox3.Text)&& !string.IsNullOrEmpty(textBox5.Text)&& !string.IsNullOrEmpty(textBox6.Text))
+            if (!string.IsNullOrEmpty(txtBarName.Text) && !string.IsNullOrEmpty(txtGlassVolume.Text) && !string.IsNullOrEmpty(txtPercentage.Text)&& !string.IsNullOrEmpty(txtCoordinateX.Text)&& !string.IsNullOrEmpty(txtCoordinateY.Text))
             {
                 try {
-                    Bar newBar = new Bar(textBox1.Text, textBox2.Text.ToDouble(), textBox5.Text.ToDouble(), textBox6.Text.ToDouble(), Int32.Parse(textBox3.Text));
                     bool match = false;
-                    foreach (Bar bar in bars)
+
+                    for (int i = 0; i < bars.Count && !match; i++)
                     {
-                        if(bar.name == newBar.name)
+                        if (bars[i].Name == txtBarName.Text)
                         {
-                            bar.CountAverage(newBar);
-                            textBox4.Text = bar.Average.ToString("F2");
+                            Bar b = bars[i];
+                            b.Percentage = Int32.Parse(txtPercentage.Text);
+                            txtAverage.Text = b.Average.ToString("F2");
+                            bars[i] = b;
                             match = true;
+                            comboBox1.SelectedIndex = i;
+
                         }
+
                     }
                     if(match != true)
                     {
-                        comboBox1.Items.Add(newBar.name);
-                        bars.Add(newBar);
+                        bars.Add(new Bar(
+                            txtBarName.Text, 
+                            txtGlassVolume.Text.ToDouble(), 
+                            txtCoordinateX.Text.ToDouble(), 
+                            txtCoordinateY.Text.ToDouble(), 
+                            Int32.Parse(txtPercentage.Text)
+                            ));
+                        comboBox1.Items.Add(txtBarName.Text);
+                        comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
                     }
                 }
                 catch(FormatException ex)
@@ -68,12 +80,12 @@ namespace holy_water
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Bar bar = bars[comboBox1.SelectedIndex];
-            textBox1.Text = bar.name;
-            textBox2.Text = bar.volume.ToString("F2");
-            textBox3.Text = bar.percentage.ToString("F2");
-            textBox5.Text = bar.locX.ToString("F2");
-            textBox6.Text = bar.locY.ToString("F2");
-            textBox4.Text = bar.Average.ToString("F2");
+            txtBarName.Text = bar.Name;
+            txtGlassVolume.Text = bar.Volume.ToString("F2");
+            txtPercentage.Text = bar.Percentage.ToString("D");
+            txtCoordinateX.Text = bar.LocX.ToString("F2");
+            txtCoordinateY.Text = bar.LocY.ToString("F2");
+            txtAverage.Text = bar.Average.ToString("F2");
         }
         
         private void SaveToFile_Click(object sender, EventArgs e)
@@ -116,7 +128,7 @@ namespace holy_water
             comboBox1.Items.Clear();
             foreach(Bar bar in bars)
             {
-                comboBox1.Items.Add(bar.name);
+                comboBox1.Items.Add(bar.Name);
                 comboBox1.SelectedIndex = 0;
             }
         }
@@ -136,17 +148,17 @@ namespace holy_water
                 comboBox1.Items.Clear();
                 if(selectedBars.Count == 0)
                 {
-                    textBox1.Clear();
-                    textBox2.Clear();
-                    textBox3.Clear();
-                    textBox4.Clear();
-                    textBox5.Clear();
-                    textBox6.Clear();
+                    txtBarName.Clear();
+                    txtGlassVolume.Clear();
+                    txtPercentage.Clear();
+                    txtAverage.Clear();
+                    txtCoordinateX.Clear();
+                    txtCoordinateY.Clear();
                     MessageBox.Show(Resource1.NothingToShow);
                 }
                 foreach(Bar bar in selectedBars)
                 {
-                    comboBox1.Items.Add(bar.name);
+                    comboBox1.Items.Add(bar.Name);
                     comboBox1.SelectedIndex = 0;
                 }
                 comboBox1.SelectedIndex = 0;

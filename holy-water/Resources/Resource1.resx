@@ -142,7 +142,7 @@
     <value>Filter by percentage</value>
   </data>
   <data name="FilterNumberReg" xml:space="preserve">
-    <value>@"^[\d]+$"</value>
+    <value>^[0-9]+$</value>
   </data>
   <data name="MinimalFilter" xml:space="preserve">
     <value>Enter the minimal level for filter</value>

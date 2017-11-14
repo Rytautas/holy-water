@@ -22,8 +22,8 @@ namespace holy_water
         {
             foreach (Bar bar in bars)
             {
-                Name.Add(bar.name);
-                Avg.Add(bar.percentage);
+                Name.Add(bar.Name);
+                Avg.Add(bar.Percentage);
             }
         }
         public void CalculateAverage(List<string> Name, List<double> Avg)
