@@ -74,7 +74,7 @@ namespace holy_water
             if (reg.IsMatch(input))
             {
                 var selectedBars = from bar in bars
-                                   where bar.Average >= double.Parse(input)
+                                   where bar.Average >= input.ToDecimal()
                                    select bar;
                 return selectedBars;
             }

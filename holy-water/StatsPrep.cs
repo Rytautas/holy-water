@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace holy_water
 {
@@ -19,7 +16,7 @@ namespace holy_water
                 while (line != null)
                 {
                     string[] split = line.Split(' ');
-                    barsAvg.Add(new BarAvg(split[0], split[1].ToDouble()));
+                    barsAvg.Add(new BarAvg(split[0], split[1].ToDecimal()));
                     line = sr.ReadLine();
                 }
             }

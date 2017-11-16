@@ -57,9 +57,9 @@ namespace holy_water
                     {
                         bars.Add(new Bar(
                             txtBarName.Text, 
-                            txtGlassVolume.Text.ToDouble(), 
-                            txtCoordinateX.Text.ToDouble(), 
-                            txtCoordinateY.Text.ToDouble(), 
+                            txtGlassVolume.Text.ToDecimal(), 
+                            txtCoordinateX.Text.ToDecimal(), 
+                            txtCoordinateY.Text.ToDecimal(), 
                             Int32.Parse(txtPercentage.Text)
                             ));
                         comboBox1.Items.Add(txtBarName.Text);
