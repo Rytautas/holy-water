@@ -26,7 +26,7 @@ namespace holy_water
         public decimal LocX { get => locX; }
         public decimal LocY { get => locY; }
 
-        public Bar(string name, decimal volume, decimal locX, decimal locY, int percentage, decimal average = 0.0, int count = 1)
+        public Bar(string name, decimal volume, decimal locX, decimal locY, int percentage, decimal average = 0, int count = 1)
         {
             this.name = name;
             this.volume = volume;

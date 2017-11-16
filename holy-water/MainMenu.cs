@@ -10,11 +10,6 @@ namespace holy_water
             InitializeComponent();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -32,17 +27,12 @@ namespace holy_water
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            checkBox1.Checked = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
