@@ -36,10 +36,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(117, 101);
+            this.button2.Location = new System.Drawing.Point(104, 81);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 51);
+            this.button2.Size = new System.Drawing.Size(122, 41);
             this.button2.TabIndex = 3;
             this.button2.Text = "Manual Input";
             this.button2.UseVisualStyleBackColor = true;
@@ -48,21 +48,19 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 338);
+            this.checkBox1.Location = new System.Drawing.Point(20, 270);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 24);
+            this.checkBox1.Size = new System.Drawing.Size(54, 21);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "18+";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(245, 325);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Location = new System.Drawing.Point(218, 260);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 39);
+            this.button4.Size = new System.Drawing.Size(98, 31);
             this.button4.TabIndex = 5;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -70,9 +68,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(117, 202);
+            this.button1.Location = new System.Drawing.Point(104, 162);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 49);
+            this.button1.Size = new System.Drawing.Size(122, 39);
             this.button1.TabIndex = 6;
             this.button1.Text = "Statistics";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,10 +79,10 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::holy_water.Properties.Resources.dribbble;
-            this.ClientSize = new System.Drawing.Size(384, 392);
+            this.ClientSize = new System.Drawing.Size(341, 314);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);

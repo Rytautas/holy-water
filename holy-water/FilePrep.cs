@@ -9,8 +9,8 @@ namespace holy_water
         public List<Bar> Read(String fileName)
         {
             List<Bar> bars = new List<Bar>();
-            
-            using(StreamReader sr = new StreamReader(fileName))
+
+            using (StreamReader sr = new StreamReader(fileName))
             {
                 string line = sr.ReadLine();
                 while (line != null)
@@ -36,6 +36,30 @@ namespace holy_water
                     wr.WriteLine(bar.Name + "\t" + bar.Volume + "\t" + bar.Percentage + "\t" + bar.LocX + "\t" + bar.LocY + "\t" + bar.Average + "\t" + bar.Count);
                 }
             }
+        }
+
+        public void Write(String fileName, User user)
+        {
+            using (StreamWriter wr = new StreamWriter(fileName, true))
+            {
+                wr.WriteLine(user.Username + "\t" + user.Password);
+            }
+        }
+
+        public List<User> ReadUser(String fileName)
+        {
+            List<User> users = new List<User>();
+            using (StreamReader sr = new StreamReader(fileName))
+            {
+                string line = sr.ReadLine();
+                while (line != null)
+                {
+                    string[] split = line.Split('\t');
+                    users.Add(new User(split[0], split[1]));
+                    line = sr.ReadLine();
+                }
+            }
+            return users;
         }
     }
 }
