@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HolyWaterWebService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +59,11 @@ namespace holy_water
         private void BackButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private int HashPw(string pw)
+        {
+            return 0;
         }
     }
 }

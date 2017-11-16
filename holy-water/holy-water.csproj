@@ -37,7 +37,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugService|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\DebugService\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;DEBUG_SERVICE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG_SERVICE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -48,6 +48,8 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +63,11 @@
   <ItemGroup>
     <Compile Include="Average.cs" />
     <Compile Include="Bar.cs" />
+    <Compile Include="Connected Services\HashService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +151,13 @@
     <EmbeddedResource Include="ViewStatistics.resx">
       <DependentUpon>ViewStatistics.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\HashService\HashService.wsdl" />
+    <None Include="Connected Services\HashService\HashService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\HashService\HashService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -159,6 +173,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dribbble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\HashService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HashService\HashService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HashService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HashService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\HashService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HolyWaterWebService\HolyWaterWebService.csproj">
+      <Project>{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}</Project>
+      <Name>HolyWaterWebService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
