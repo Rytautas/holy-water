@@ -29,7 +29,7 @@ namespace holy_water
 
             foreach (User u in users)
             {
-                if(u.Username == user.Username && hash(u.Password) == hash(user.Password))
+                if(u.Username == user.Username && Int32.Parse(u.Password) == hash(user.Password))
                 {
                     MainMenu menu = new MainMenu();
                     match = true;
