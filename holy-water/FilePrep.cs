@@ -16,7 +16,7 @@ namespace holy_water
                 while (line != null)
                 {
                     string[] split = line.Split('\t');
-                    bars.Add(new Bar(split[0], split[1].ToDouble(), split[3].ToDouble(), split[4].ToDouble(), Int32.Parse(split[2]), split[5].ToDouble(), Int32.Parse(split[6])));
+                    bars.Add(new Bar(split[0], split[1].ToDecimal(), split[3].ToDecimal(), split[4].ToDecimal(), Int32.Parse(split[2]), split[5].ToDecimal(), Int32.Parse(split[6])));
                     line = sr.ReadLine();
                 }
             }
