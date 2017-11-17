@@ -16,7 +16,7 @@ namespace holy_water
         private void ViewStatistics_Load(object sender, EventArgs e)
         {
             StatsPrep prep = new StatsPrep();
-            barsAvg = prep.Read("test.txt");
+            barsAvg = prep.Read("Name.txt","Avg.txt");
             foreach (BarAvg baravg in barsAvg)
             {
                 ListViewItem lvi = new ListViewItem(baravg.barName);

@@ -13,10 +13,9 @@ namespace holy_water
             List<Bar> bars = new List<Bar>();
             FilePrep prep = new FilePrep();
             bars = prep.Read("Bar_data.txt");
-            string filename = "test.txt";
             FillLists(Name, Avg, bars);
             CalculateAverage(Name, Avg);
-            Write(Avg, Name, filename);
+            Write(Avg, Name);
         }
         public void FillLists(List<string> Name, List<double> Avg, List<Bar> bars)
         {
@@ -49,14 +48,26 @@ namespace holy_water
             }
 
         }
-        public void Write(List<double> Avg, List<string> Name, string filename)
+        
+        public void Write(List<double> Avg, List<string> Name)
         {
-            StreamWriter wr = new StreamWriter(filename);
+            StreamWriter wr1 = new StreamWriter("Name.txt");
+            StreamWriter wr2 = new StreamWriter("Avg.txt");
+            double avg;
+            string name;
             for (int index = 0; index < Avg.Count; index++)
             {
-                wr.WriteLine(Name[index] + " " + Math.Round(Avg[index], 2));
+                name = Name[index];
+                avg = Math.Round(Avg[index], 2);
+                Print(ref name, wr1);
+                Print(ref avg, wr2);
             }
-            wr.Close();
+            wr1.Close();
+            wr2.Close();
+        }
+        static void Print<T>(ref T a, StreamWriter wr)
+        {
+            wr.WriteLine(a);
         }
     }
 }
