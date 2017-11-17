@@ -13,6 +13,14 @@ namespace holy_water
         public Input()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.ThemeDark)
+            {
+                BackgroundImage = Properties.Resources.dribbble;
+            }
+            else
+            {
+                BackgroundImage = Properties.Resources.dark1;
+            }
         }
 
         private void Input_Load(object sender, EventArgs e)

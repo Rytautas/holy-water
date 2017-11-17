@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace holy_water
 {
@@ -12,15 +10,29 @@ namespace holy_water
         public List<Bar> Read(String fileName)
         {
             List<Bar> bars = new List<Bar>();
-
-            using (StreamReader sr = new StreamReader(fileName))
+            StreamReader sr = null;
+            try
             {
-                string line = sr.ReadLine();
-                while (line != null)
+                sr = new StreamReader(fileName);
+            }
+            catch (FileNotFoundException ex)
+            {
+                using (StreamWriter wr = new StreamWriter(fileName))
                 {
-                    string[] split = line.Split('\t');
-                    bars.Add(new Bar(split[0], split[1].ToDecimal(), split[3].ToDecimal(), split[4].ToDecimal(), Int32.Parse(split[2]), split[5].ToDecimal(), Int32.Parse(split[6])));
-                    line = sr.ReadLine();
+                }
+                sr = new StreamReader(fileName);
+            }
+            finally
+            {
+                using (sr)
+                {
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        string[] split = line.Split('\t');
+                        bars.Add(new Bar(split[0], split[1].ToDecimal(), split[3].ToDecimal(), split[4].ToDecimal(), Int32.Parse(split[2]), split[5].ToDecimal(), Int32.Parse(split[6])));
+                        line = sr.ReadLine();
+                    }
                 }
             }
             return bars;
@@ -69,23 +81,72 @@ namespace holy_water
             HashService.HashServiceClient client = new HashService.HashServiceClient();
             hash += delegate (string pw) { return client.HashPassword(pw); };
 #endif
-            using (StreamWriter wr = new StreamWriter(fileName, true))
-            {
-                wr.WriteLine(user.Username + "\t" + hash(user.Password));
-            }
-        }
-
-        public List<User> ReadUser(String fileName)
-        {
             List<User> users = new List<User>();
+            bool match = false;
             using (StreamReader sr = new StreamReader(fileName))
             {
                 string line = sr.ReadLine();
                 while (line != null)
                 {
                     string[] split = line.Split('\t');
-                    users.Add(new User(split[0], split[1]));
+                    users.Add(new User(split[0], split[1], (Int32.Parse(split[2]) == 1 ? true : false)));
                     line = sr.ReadLine();
+                }
+            }
+            foreach(User u in users)
+            {
+                if(u.Username == user.Username)
+                {
+                    u.dark = user.dark;
+                    match = true;
+                }
+            }
+            if (match)
+            {
+                using (StreamWriter wr = new StreamWriter(fileName))
+                {
+                    foreach(User u in users)
+                    {
+                        wr.WriteLine(u.Username + "\t" + u.Password + "\t" + (user.dark == true ? 1 : 0));
+                    }
+                }
+            }
+            else
+            {
+                using (StreamWriter wr = new StreamWriter(fileName, true))
+                {
+                    wr.WriteLine(user.Username + "\t" + hash(user.Password) + "\t" + (user.dark == true ? 1 : 0));
+                }
+            }
+        }
+
+        public List<User> ReadUser(String fileName)
+        {
+            List<User> users = new List<User>();
+            StreamReader sr = null;
+            try
+            {
+                sr = new StreamReader(fileName);
+            }
+            catch(FileNotFoundException ex)
+            {
+                using (StreamWriter wr = new StreamWriter(fileName))
+                {
+                    wr.WriteLine("admin\t-871874097\t1");
+                }
+                sr = new StreamReader(fileName);
+            }
+            finally
+            {
+                using (sr)
+                {
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        string[] split = line.Split('\t');
+                        users.Add(new User(split[0], split[1], (Int32.Parse(split[2]) == 1 ? false : true)));
+                        line = sr.ReadLine();
+                    }
                 }
             }
             return users;
