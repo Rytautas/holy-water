@@ -5,9 +5,21 @@ namespace holy_water
 {
     public partial class MainMenu : Form
     {
-        public MainMenu()
+        User user;
+        public MainMenu(User user)
         {
             InitializeComponent();
+            this.user = user;
+            Properties.Settings.Default.ThemeDark = user.dark;
+            if(!Properties.Settings.Default.ThemeDark)
+            {
+                BackgroundImage = Properties.Resources.dribbble;
+            }
+            else
+            {
+                BackgroundImage = Properties.Resources.dark1;
+                DarkThemeSwitch.Checked = true;
+            }
         }
 
 
@@ -40,6 +52,25 @@ namespace holy_water
             Average avg = new Average();
             LoadForm loadstats = new LoadForm();
             loadstats.openstats();
+        }
+
+        private void DarkThemeSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+            FilePrep prep = new FilePrep();
+            if (DarkThemeSwitch.Checked)
+            {
+                BackgroundImage = Properties.Resources.dark1;
+                Properties.Settings.Default.ThemeDark = true;
+                Properties.Settings.Default.Save();
+                prep.Write("UserData.txt", user);
+            }
+            else
+            {
+                BackgroundImage = Properties.Resources.dribbble;
+                Properties.Settings.Default.ThemeDark = false;
+                Properties.Settings.Default.Save();
+                prep.Write("UserData.txt", user);
+            }
         }
     }
 }

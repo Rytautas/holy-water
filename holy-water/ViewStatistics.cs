@@ -11,6 +11,14 @@ namespace holy_water
         public ViewStatistics()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.ThemeDark)
+            {
+                BackgroundImage = Properties.Resources.dribbble;
+            }
+            else
+            {
+                BackgroundImage = Properties.Resources.dark1;
+            }
         }
 
         private void ViewStatistics_Load(object sender, EventArgs e)

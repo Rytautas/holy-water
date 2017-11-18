@@ -32,6 +32,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.DarkThemeSwitch = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button2
@@ -77,12 +78,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // DarkThemeSwitch
+            // 
+            this.DarkThemeSwitch.Appearance = System.Windows.Forms.Appearance.Button;
+            this.DarkThemeSwitch.AutoSize = true;
+            this.DarkThemeSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DarkThemeSwitch.Location = new System.Drawing.Point(290, 12);
+            this.DarkThemeSwitch.Name = "DarkThemeSwitch";
+            this.DarkThemeSwitch.Size = new System.Drawing.Size(39, 39);
+            this.DarkThemeSwitch.TabIndex = 7;
+            this.DarkThemeSwitch.Text = "☀";
+            this.DarkThemeSwitch.UseVisualStyleBackColor = true;
+            this.DarkThemeSwitch.CheckedChanged += new System.EventHandler(this.DarkThemeSwitch_CheckedChanged);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::holy_water.Properties.Resources.dribbble;
             this.ClientSize = new System.Drawing.Size(341, 314);
+            this.Controls.Add(this.DarkThemeSwitch);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
@@ -103,6 +118,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox DarkThemeSwitch;
     }
 }
 

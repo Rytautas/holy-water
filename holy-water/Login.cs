@@ -31,7 +31,7 @@ namespace holy_water
             {
                 if(u.Username == user.Username && Int32.Parse(u.Password) == hash(user.Password))
                 {
-                    MainMenu menu = new MainMenu();
+                    MainMenu menu = new MainMenu(u);
                     match = true;
                     menu.Show();
                 }
