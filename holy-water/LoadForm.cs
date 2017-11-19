@@ -4,13 +4,13 @@
     {
       public void openinput()
         {
-            Input iv = new Input();
-            iv.Show();
+            BarList barList = new BarList();
+            barList.Show();
         }
-      public void openstats()
-        {
-            ViewStatistics st = new ViewStatistics();
-            st.Show();
-        }
+    //  public void openstats()
+        //{
+     //       ViewStatistics st = new ViewStatistics();
+      //      st.Show();
+      //  }
     }
 }

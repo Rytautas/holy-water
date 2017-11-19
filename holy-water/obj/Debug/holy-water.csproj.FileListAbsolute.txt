@@ -26,7 +26,6 @@ C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.csproj.
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.exe
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy-water.pdb
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Input.resources
-C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Scale.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.MainMenu.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Input.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Resources.Resource1.resources
@@ -93,3 +92,35 @@ C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-wate
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\System.Web.WebPages.xml
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\ApplicationInsights.config
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\HolyWaterWebService.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Optimization.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Mvc.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Http.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Razor.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\HolyWaterWebService.pdb
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\HolyWaterWebService.dll.config
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Optimization.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Mvc.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Http.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.Razor.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Login.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.Register.resources
+C:\Users\Neringa\source\repos\holy-water\holy-water\obj\Debug\holy_water.BarList.resources
+C:\Users\Neringa\source\repos\holy-water\holy-water\obj\Debug\holy_water.EditBar.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.DrinkList.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.InputDrink.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.BarFilter.resources

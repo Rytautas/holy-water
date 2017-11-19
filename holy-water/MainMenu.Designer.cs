@@ -31,61 +31,51 @@
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.DarkThemeSwitch = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(104, 81);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(78, 92);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 41);
+            this.button2.Size = new System.Drawing.Size(92, 33);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Manual Input";
+            this.button2.Text = "Bars";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(20, 270);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox1.Location = new System.Drawing.Point(15, 219);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 21);
+            this.checkBox1.Size = new System.Drawing.Size(44, 17);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "18+";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(218, 260);
+            this.button4.Location = new System.Drawing.Point(164, 211);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 31);
+            this.button4.Size = new System.Drawing.Size(74, 25);
             this.button4.TabIndex = 5;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(104, 162);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Statistics";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // DarkThemeSwitch
             // 
             this.DarkThemeSwitch.Appearance = System.Windows.Forms.Appearance.Button;
             this.DarkThemeSwitch.AutoSize = true;
             this.DarkThemeSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DarkThemeSwitch.Location = new System.Drawing.Point(290, 12);
+            this.DarkThemeSwitch.Location = new System.Drawing.Point(218, 10);
+            this.DarkThemeSwitch.Margin = new System.Windows.Forms.Padding(2);
             this.DarkThemeSwitch.Name = "DarkThemeSwitch";
-            this.DarkThemeSwitch.Size = new System.Drawing.Size(39, 39);
+            this.DarkThemeSwitch.Size = new System.Drawing.Size(33, 34);
             this.DarkThemeSwitch.TabIndex = 7;
             this.DarkThemeSwitch.Text = "☀";
             this.DarkThemeSwitch.UseVisualStyleBackColor = true;
@@ -93,17 +83,16 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::holy_water.Properties.Resources.dribbble;
-            this.ClientSize = new System.Drawing.Size(341, 314);
+            this.ClientSize = new System.Drawing.Size(256, 255);
             this.Controls.Add(this.DarkThemeSwitch);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holy Water";
@@ -117,7 +106,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox DarkThemeSwitch;
     }
 }
