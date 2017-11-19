@@ -27,8 +27,10 @@ namespace holy_water
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                LoadForm loadinput = new LoadForm();
-                loadinput.openinput();
+                // LoadForm loadinput = new LoadForm();
+                // loadinput.openinput();
+                LoadForm loadbarList = new LoadForm();
+                loadbarList.openinput();
             }
             else
             {
@@ -71,6 +73,11 @@ namespace holy_water
                 Properties.Settings.Default.Save();
                 prep.Write("UserData.txt", user);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            (new BarList()).ShowDialog();
         }
     }
 }
