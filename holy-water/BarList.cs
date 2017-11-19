@@ -7,21 +7,76 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace holy_water
 {
     public partial class BarList : Form
     {
-
         public event OnBarChanged BarChanged;
         public delegate void OnBarChanged(int barId, string barName);
 
+        public event OnParentFormClosed ParentFormClosed;
+        public delegate void OnParentFormClosed();
 
-        private bool reload = false;
+        private class FormThread
+        {
+            public delegate void BarChangedDelegate(int barId, string barName);
+            public delegate void CloseFormDelegate();
+
+            DrinkList form;
+            Thread thread;
+
+            public FormThread(DrinkList form)
+            {
+                this.form = form;
+                this.thread = new Thread(new ThreadStart(this.Run));
+            }
+
+            public void Run()
+            {
+                this.form.ShowDialog();
+            }
+
+            public void Start()
+            {
+                this.thread.Start();
+            }
+
+            public void Stop()
+            {
+                try
+                {
+                    form.BeginInvoke(new CloseFormDelegate(this.form.Close));
+                }
+                catch (Exception e) { };
+                thread.Join();
+            }
+
+            public void OnBarChanged(int barId, string barName)
+            {
+                // ignore event on form close
+                if (!form.Visible)
+                    return;
+
+                form.BeginInvoke(new BarChangedDelegate(this.form.BarChanged), barId, barName);
+            }
+
+            public void ParentFormClosed()
+            {
+                Stop();
+            }
+
+        }
+
+
+
+        private BarFilter barFilter = new BarFilter();
 
         public BarList()
         {
             InitializeComponent();
+
             if (Properties.Settings.Default.ThemeDark)
             {
                 BackgroundImage = Properties.Resources.dark1;
@@ -46,11 +101,6 @@ namespace holy_water
         {
             bindingNavigatorDeleteItem.Enabled = bindingNavigatorPositionItem.Enabled;
             bindingNavigatorViewDrinksItem.Enabled = bindingNavigatorPositionItem.Enabled;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -82,9 +132,7 @@ namespace holy_water
         }
 
 
-        private void barsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
-        {
-         }
+       
 
         private void dataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
@@ -92,14 +140,6 @@ namespace holy_water
                 e.Cancel = true;
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
@@ -156,14 +196,16 @@ namespace holy_water
 
         private void barsBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            if (reload) return;
-
             Enable_buttons();
- 
+
+            if (this.barsBindingSource.Current == null)
+                return;
+
+
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
 
             if (this.BarChanged != null)
-                BarChanged(int.Parse(row["Id"].ToString()), row["Name"].ToString());
+                BarChanged((int)row["Id"], row["Name"].ToString());
 
         }
 
@@ -171,38 +213,62 @@ namespace holy_water
         {
 
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-            DrinkList drinkList = new DrinkList(int.Parse(row["Id"].ToString()), row["Name"].ToString());
-            this.BarChanged += drinkList.OnBarChanged;
+            DrinkList drinkList = new DrinkList((int)row["Id"], row["Name"].ToString());
             drinkList.DrinkChanged += DrinkList_DrinkChanged;
-            drinkList.Show();
+
+            FormThread formThread = new FormThread(drinkList);
+            this.BarChanged += formThread.OnBarChanged;
+            this.ParentFormClosed += formThread.ParentFormClosed;
+            formThread.Start();
         }
 
         private void DrinkList_DrinkChanged(int barId)
         {
-            reload = true;
-            int currentRow = dataGridView2.CurrentCell.RowIndex;
-            this.barsTableAdapter.Fill(this.hollyWaterDbDataSet.Bars);
 
-            dataGridView2.Rows[currentRow].Selected = true;
-            dataGridView2.Refresh();
-            Enable_buttons();
-           reload = false;
+            HollyWaterDbDataSet.BarsTotalsDataTable tbl = this.barsTotalsTableAdapter1.GetTotalsById(barId);
+            if (tbl.Rows.Count == 0)
+                return;
+
+            DataRow totalsRow = tbl.Rows[0];
+
+            DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
+            row["Total_average"] = totalsRow["Total_average"];
+            row["Total_count"]   = totalsRow["Total_count"];
+
+            if (this.BarChanged != null)
+                BarChanged(int.Parse(row["Id"].ToString()), row["Name"].ToString());
+
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void toolStripBackButton_Click(object sender, EventArgs e)
         {
             Close();
-            
         }
 
-        private void btnResetFilter_Click(object sender, EventArgs e)
+        private void toolStripFilterButton_Click(object sender, EventArgs e)
         {
-            
+            if (barFilter.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            toolStripFilterButton.BackColor = Color.Red;
+
+            if (barFilter.Filter == BarFilter.FilterType.FilteByAverage)
+                this.barsTableAdapter.FillByMinAverage(this.hollyWaterDbDataSet.Bars, barFilter.FilterMinValue);
+            else
+                this.barsTableAdapter.FillByMinCount(this.hollyWaterDbDataSet.Bars, (int)barFilter.FilterMinValue);
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void toolStripResetFilterButton_Click(object sender, EventArgs e)
         {
-           
+            toolStripFilterButton.BackColor = toolStripResetFilterButton.BackColor;
+
+            BarList_Load(this, new EventArgs());
+        }
+
+        private void BarList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ParentFormClosed != null)
+                this.ParentFormClosed();
         }
     }
 }

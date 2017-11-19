@@ -15,6 +15,8 @@ namespace holy_water
         public event OnDrinkChanged DrinkChanged;
         public delegate void OnDrinkChanged(int barId);
 
+        
+
         private int barId;
         private string barName;
 
@@ -24,18 +26,20 @@ namespace holy_water
 
             InitializeComponent();
 
-            OnBarChanged(barId, barName);
+            BarChanged(barId, barName);
 
             
         }
-
-        public void OnBarChanged(int barId, string barName)
+        
+        public void BarChanged(int barId, string barName)
         {
             this.barId = barId;
             this.barName = barName;
+
             this.Text = string.Format("[{0}] - {1} drink list", barId, barName);
             this.drinksTableAdapter.FillByBar(this.hollyWaterDbDataSet.Drinks, barId);
-
+            this.Invalidate();
+            this.dataGridView1.Invalidate();
         }
 
         private void DrinkList_Load(object sender, EventArgs e)

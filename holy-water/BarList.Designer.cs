@@ -46,6 +46,11 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorViewDrinksItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripFilterButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripResetFilterButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripBackButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +60,7 @@
             this.totalaverageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barsTableAdapter = new holy_water.HollyWaterDbDataSetTableAdapters.BarsTableAdapter();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnResetFilter = new System.Windows.Forms.Button();
+            this.barsTotalsTableAdapter1 = new holy_water.HollyWaterDbDataSetTableAdapters.BarsTotalsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barsBindingSource)).BeginInit();
@@ -88,7 +91,12 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.toolStripSeparator1,
-            this.bindingNavigatorViewDrinksItem});
+            this.bindingNavigatorViewDrinksItem,
+            this.toolStripSeparator2,
+            this.toolStripFilterButton,
+            this.toolStripResetFilterButton,
+            this.toolStripSeparator3,
+            this.toolStripBackButton});
             this.bindingNavigator1.Location = new System.Drawing.Point(3, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -96,7 +104,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(332, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(485, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -114,7 +122,6 @@
             // 
             this.barsBindingSource.DataMember = "Bars";
             this.barsBindingSource.DataSource = this.hollyWaterDbDataSet;
-            this.barsBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.barsBindingSource_AddingNew);
             this.barsBindingSource.CurrentChanged += new System.EventHandler(this.barsBindingSource_CurrentChanged);
             // 
             // hollyWaterDbDataSet
@@ -214,14 +221,51 @@
             this.bindingNavigatorViewDrinksItem.Text = "View drinks";
             this.bindingNavigatorViewDrinksItem.Click += new System.EventHandler(this.bindingNavigatorViewDrinksItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripFilterButton
+            // 
+            this.toolStripFilterButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripFilterButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripFilterButton.Image")));
+            this.toolStripFilterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripFilterButton.Name = "toolStripFilterButton";
+            this.toolStripFilterButton.Size = new System.Drawing.Size(37, 22);
+            this.toolStripFilterButton.Text = "Filter";
+            this.toolStripFilterButton.Click += new System.EventHandler(this.toolStripFilterButton_Click);
+            // 
+            // toolStripResetFilterButton
+            // 
+            this.toolStripResetFilterButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripResetFilterButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripResetFilterButton.Image")));
+            this.toolStripResetFilterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripResetFilterButton.Name = "toolStripResetFilterButton";
+            this.toolStripResetFilterButton.Size = new System.Drawing.Size(68, 22);
+            this.toolStripResetFilterButton.Text = "Reset Filter";
+            this.toolStripResetFilterButton.Click += new System.EventHandler(this.toolStripResetFilterButton_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripBackButton
+            // 
+            this.toolStripBackButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripBackButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBackButton.Image")));
+            this.toolStripBackButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBackButton.Name = "toolStripBackButton";
+            this.toolStripBackButton.Size = new System.Drawing.Size(36, 22);
+            this.toolStripBackButton.Text = "Back";
+            this.toolStripBackButton.Click += new System.EventHandler(this.toolStripBackButton_Click);
+            // 
             // toolStripContainer1
             // 
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btnResetFilter);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btnFilter);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btnBack);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView2);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(748, 210);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,6 +285,7 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -308,35 +353,9 @@
             // 
             this.barsTableAdapter.ClearBeforeFill = true;
             // 
-            // btnBack
+            // barsTotalsTableAdapter1
             // 
-            this.btnBack.Location = new System.Drawing.Point(648, 184);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Location = new System.Drawing.Point(648, 94);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 2;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // btnResetFilter
-            // 
-            this.btnResetFilter.Location = new System.Drawing.Point(648, 143);
-            this.btnResetFilter.Name = "btnResetFilter";
-            this.btnResetFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnResetFilter.TabIndex = 3;
-            this.btnResetFilter.Text = "Reset Filter";
-            this.btnResetFilter.UseVisualStyleBackColor = true;
-            this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
+            this.barsTotalsTableAdapter1.ClearBeforeFill = true;
             // 
             // BarList
             // 
@@ -347,6 +366,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "BarList";
             this.Text = "BarList";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BarList_FormClosing);
             this.Load += new System.EventHandler(this.BarList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
@@ -389,8 +409,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mapcoordinatesDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalaverageDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_count;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnResetFilter;
-        private System.Windows.Forms.Button btnFilter;
+        private HollyWaterDbDataSetTableAdapters.BarsTotalsTableAdapter barsTotalsTableAdapter1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripFilterButton;
+        private System.Windows.Forms.ToolStripButton toolStripResetFilterButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripBackButton;
     }
 }

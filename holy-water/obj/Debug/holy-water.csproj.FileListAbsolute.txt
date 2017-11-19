@@ -123,3 +123,4 @@ C:\Users\Neringa\source\repos\holy-water\holy-water\obj\Debug\holy_water.BarList
 C:\Users\Neringa\source\repos\holy-water\holy-water\obj\Debug\holy_water.EditBar.resources
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.DrinkList.resources
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.InputDrink.resources
+C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.BarFilter.resources

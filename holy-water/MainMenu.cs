@@ -49,13 +49,13 @@ namespace holy_water
             Close();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+      /*  private void button1_Click_1(object sender, EventArgs e)
         {
             Average avg = new Average();
             LoadForm loadstats = new LoadForm();
             loadstats.openstats();
         }
-
+        */
         private void DarkThemeSwitch_CheckedChanged(object sender, EventArgs e)
         {
             FilePrep prep = new FilePrep();

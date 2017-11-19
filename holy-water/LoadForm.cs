@@ -7,10 +7,10 @@
             BarList barList = new BarList();
             barList.Show();
         }
-      public void openstats()
-        {
-            ViewStatistics st = new ViewStatistics();
-            st.Show();
-        }
+    //  public void openstats()
+        //{
+     //       ViewStatistics st = new ViewStatistics();
+      //      st.Show();
+      //  }
     }
 }

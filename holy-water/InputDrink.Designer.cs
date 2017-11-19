@@ -56,6 +56,7 @@
             // 
             this.dtpDrinkTime.CustomFormat = "yyyy-MM-dd   HH:mm:ss";
             this.dtpDrinkTime.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpDrinkTime.Enabled = false;
             this.dtpDrinkTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDrinkTime.Location = new System.Drawing.Point(35, 29);
             this.dtpDrinkTime.Name = "dtpDrinkTime";
