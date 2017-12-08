@@ -45,5 +45,16 @@ namespace holy_water.Properties {
                 return ((string)(this["connString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=holywater.database.windows.net;Initial Catalog=barsDatabase;Persist S" +
+            "ecurity Info=True;User ID=holywater;Password=#database01")]
+        public string barsDatabaseConnectionString {
+            get {
+                return ((string)(this["barsDatabaseConnectionString"]));
+            }
+        }
     }
 }

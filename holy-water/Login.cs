@@ -79,5 +79,10 @@ namespace holy_water
                 LoginButton_Click(sender, e);
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -65,5 +65,10 @@ namespace holy_water
         {
             return 0;
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
