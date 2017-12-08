@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "holy-water", "holy-water\holy-water.csproj", "{82CB262E-122E-40A9-9488-1CC4FA8E414F}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -14,31 +14,52 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "holy-waterTests", "holy-wat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolyWaterWebService", "HolyWaterWebService\HolyWaterWebService.csproj", "{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolyWaterApp", "HolyWaterApp\HolyWaterApp.csproj", "{C3152969-0964-41CA-9BC4-DE5DC9A5366B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DEBUG_SERVICE|Any CPU = DEBUG_SERVICE|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		DebugService|Any CPU = DebugService|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.DEBUG_SERVICE|Any CPU.ActiveCfg = DEBUG_SERVICE|Any CPU
+		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.DEBUG_SERVICE|Any CPU.Build.0 = DEBUG_SERVICE|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.DebugService|Any CPU.ActiveCfg = DebugService|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.DebugService|Any CPU.Build.0 = DebugService|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82CB262E-122E-40A9-9488-1CC4FA8E414F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955A5508-BCF5-4041-A613-D52C5E1E539F}.DEBUG_SERVICE|Any CPU.ActiveCfg = DEBUG_SERVICE|Any CPU
+		{955A5508-BCF5-4041-A613-D52C5E1E539F}.DEBUG_SERVICE|Any CPU.Build.0 = DEBUG_SERVICE|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.DebugService|Any CPU.ActiveCfg = DebugService|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.DebugService|Any CPU.Build.0 = DebugService|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{955A5508-BCF5-4041-A613-D52C5E1E539F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.DEBUG_SERVICE|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.DEBUG_SERVICE|Any CPU.Build.0 = Debug|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.DebugService|Any CPU.ActiveCfg = Debug|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.DebugService|Any CPU.Build.0 = Debug|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98FCB49-7363-43EC-AE0D-C6EF194CCD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DEBUG_SERVICE|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DEBUG_SERVICE|Any CPU.Build.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DEBUG_SERVICE|Any CPU.Deploy.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DebugService|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DebugService|Any CPU.Build.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.DebugService|Any CPU.Deploy.0 = Debug|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3152969-0964-41CA-9BC4-DE5DC9A5366B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
