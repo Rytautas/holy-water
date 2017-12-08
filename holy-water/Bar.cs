@@ -1,30 +1,16 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace holy_water
 {
+    [DataContract]
     public class Bar
     {
-        private String name;
-        private decimal volume, locX, locY;
-        private int percentage;
-        private int count;
-        private decimal average;
+        public Bar()
+        {
 
-        public int Count { get => count; }
-        public decimal Average { get => average; }
-
-        public int Percentage {
-            get => percentage; 
-            set {
-                percentage = value;
-                CountAverage();
-            }
         }
-
-        public string Name { get => name; }
-        public decimal Volume { get => volume;  }
-        public decimal LocX { get => locX; }
-        public decimal LocY { get => locY; }
 
         public Bar(string name, decimal volume, decimal locX, decimal locY, int percentage, decimal average = 0, int count = 1)
         {
@@ -37,7 +23,48 @@ namespace holy_water
             this.average = average == 0 ? percentage : average;
         }
 
+        private String name;
+        private decimal volume, locX, locY;
+        private int percentage;
+        private int count;
+        private decimal average;
         
+        [DataMember]
+        [JsonProperty("Count")]
+        public int Count { get; set; }
+
+        [DataMember]
+        [JsonProperty("Average")]
+        public decimal Average { get; set; }
+
+        [DataMember]
+        [JsonProperty("Name")]
+        public string Name { get; set; }
+
+        [DataMember]
+        [JsonProperty("Volume")]
+        public decimal Volume { get; set; }
+
+        [DataMember]
+        [JsonProperty("LocX")]
+        public decimal LocX { get; set; }
+
+        [DataMember]
+        [JsonProperty("LocY")]
+        public decimal LocY { get; set; }
+
+        [DataMember]
+        [JsonProperty("Percentage")]
+        public int Percentage
+        {
+            get => percentage; 
+            set {
+                percentage = value;
+                CountAverage();
+            }
+        }
+
+
         private void CountAverage()
         {
             average = (count * average + percentage) / ++count;
