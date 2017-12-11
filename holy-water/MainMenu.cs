@@ -1,4 +1,5 @@
 ﻿using holy_water.Resources;
+using HolyWaterWebService;
 using System;
 using System.Windows.Forms;
 
@@ -55,19 +56,31 @@ namespace holy_water
         private void DarkThemeSwitch_CheckedChanged(object sender, EventArgs e)
         {
             FilePrep prep = new FilePrep();
+            IHashService hash;
+            HashService.HashServiceClient client = new HashService.HashServiceClient();
+
+            if (client != null)
+            {
+                hash = new HashNonLocal();
+            }
+            else
+            {
+                hash = new HashLocal();
+            }
+
             if (DarkThemeSwitch.Checked)
             {
                 BackgroundImage = Properties.Resources.dark1;
                 Properties.Settings.Default.ThemeDark = true;
                 Properties.Settings.Default.Save();
-                prep.Write(Resource1.UserDataFile, user);
+                prep.Write(Resource1.UserDataFile, user, hash);
             }
             else
             {
                 BackgroundImage = Properties.Resources.dribbble;
                 Properties.Settings.Default.ThemeDark = false;
                 Properties.Settings.Default.Save();
-                prep.Write(Resource1.UserDataFile, user);
+                prep.Write(Resource1.UserDataFile, user, hash);
             }
         }
 

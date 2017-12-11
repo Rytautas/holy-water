@@ -66,7 +66,6 @@ C:\Users\User\source\repos\holy-water\holy-water\obj\Debug\holy_water.ViewStatis
 C:\Users\Neringa\Source\Repos\holy-water\holy-water\obj\Debug\holy_water.ViewStatistics.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Login.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.Register.resources
-C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\obj\Debug\holy_water.ViewStatistics.resources
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\ApplicationInsights.config
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\HolyWaterWebService.dll
 C:\Users\Vartotojas\Desktop\programming\Taikomas Objektinis\holy-water\holy-water\bin\Debug\System.Web.Optimization.dll
