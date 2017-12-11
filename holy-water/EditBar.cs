@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,14 +42,14 @@ namespace holy_water
         {
             if (txtName.Text == string.Empty)
             {
-                MessageBox.Show("Bar name can't be empty");
+                MessageBox.Show(Resource1.EmptyFields);
                 txtName.Focus();
                 return false;
             }
 
             if (txtAddress.Text == string.Empty)
             {
-                MessageBox.Show("Bar address can't be empty");
+                MessageBox.Show(Resource1.EmptyFields);
                 txtAddress.Focus();
                 return false;
             }

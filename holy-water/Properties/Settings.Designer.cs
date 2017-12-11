@@ -38,22 +38,22 @@ namespace holy_water.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\HollyWaterDb." +
-            "mdf;Integrated Security=True;Connect Timeout=30")]
-        public string connString {
-            get {
-                return ((string)(this["connString"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=holywater.database.windows.net;Initial Catalog=barsDatabase;Persist S" +
             "ecurity Info=True;User ID=holywater;Password=#database01")]
         public string barsDatabaseConnectionString {
             get {
                 return ((string)(this["barsDatabaseConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=holywater.database.windows.net;Initial Catalog=barsDatabase;Persist S" +
+            "ecurity Info=True;User ID=holywater;Password=#database01")]
+        public string connString {
+            get {
+                return ((string)(this["connString"]));
             }
         }
     }

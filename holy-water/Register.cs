@@ -1,4 +1,5 @@
-﻿using HolyWaterWebService;
+﻿using holy_water.Resources;
+using HolyWaterWebService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace holy_water
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             FilePrep prep = new FilePrep();
-            Lazy<List<User>> users = new Lazy<List<User>>(() => new List<User>(prep.ReadUser("UserData.txt")));
+            Lazy<List<User>> users = new Lazy<List<User>>(() => new List<User>(prep.ReadUser(Resource1.UserDataFile)));
 
             if(checkBox18.Checked)
             {
@@ -33,26 +34,26 @@ namespace holy_water
                     {
                         if(u.Username.Equals(user.Username))
                         {
-                            MessageBox.Show("This username already exists");
+                            MessageBox.Show(Resource1.UsernameTaken);
                             match = true;
                             break;
                         }
                     }
                     if(!match)
                     {
-                        prep.Write("UserData.txt", user);
-                        MessageBox.Show("User created successfully");
+                        prep.Write(Resource1.UserDataFile, user);
+                        MessageBox.Show(Resource1.UserCreated);
                         Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Passwords must match");
+                    MessageBox.Show(Resource1.PasswordsDontMatch);
                 }
             }
             else
             {
-                MessageBox.Show("You must be +18 years old to proceed");
+                MessageBox.Show(Resource1.AgeDenied);
             }
         }
 

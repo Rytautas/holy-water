@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using holy_water.Resources;
 
 namespace holy_water
 {
@@ -92,7 +93,7 @@ namespace holy_water
         private void BarList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hollyWaterDbDataSet.Bars' table. You can move, or remove it, as needed.
-            this.barsTableAdapter.Fill(this.hollyWaterDbDataSet.Bars);
+            barsTableAdapter.Fill(hollyWaterDbDataSet.Bars);
             Enable_buttons();
             
         }
@@ -107,15 +108,15 @@ namespace holy_water
         {
             using (EditBar editBar = new EditBar())
             {
-                editBar.Text = "New Bar";
+                editBar.Text = Resource1.LabelValueNewBar;
                 if (editBar.ShowDialog() == DialogResult.OK)
                 {
                     DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-                    row["Name"] = editBar.BarName;
-                    row["Address"] = editBar.BarAddress;
-                    row["Map_coordinates"] = editBar.BarCoordinates != string.Empty ? editBar.BarCoordinates : null;
-                    row["Total_average"] = 0.00;
-                    row["Total_count"] = 0;
+                    row[Resource1.BarTableName] = editBar.BarName;
+                    row[Resource1.BarTableAddress] = editBar.BarAddress;
+                    row[Resource1.BarTableCoordinates] = editBar.BarCoordinates != string.Empty ? editBar.BarCoordinates : null;
+                    row[Resource1.BarTableAverage] = 0.00;
+                    row[Resource1.BarTableCount] = 0;
 
                     this.barsBindingSource.EndEdit();
                     this.barsTableAdapter.Update(this.hollyWaterDbDataSet.Bars);
@@ -136,14 +137,14 @@ namespace holy_water
 
         private void dataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if (MessageBox.Show("Do you want to delete?", "Warning", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show(Resource1.MessegeDelete, Resource1.Warning, MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
         }
 
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Resource1.MessegeDelete, Resource1.Warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 barsBindingSource.RemoveCurrent();
                 barsTableAdapter.Update(this.hollyWaterDbDataSet.Bars);
@@ -170,21 +171,21 @@ namespace holy_water
         {
             using (EditBar editBar = new EditBar())
             {
-                editBar.Text = "Edit Bar";
+                editBar.Text = Resource1.LabelValueNewBar;
                 DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-                editBar.BarName = row["Name"].ToString();
-                editBar.BarAddress = row["Address"].ToString();
-                editBar.BarCoordinates = row["Map_coordinates"].ToString();
+                editBar.BarName = row[Resource1.BarTableName].ToString();
+                editBar.BarAddress = row[Resource1.BarTableAddress].ToString();
+                editBar.BarCoordinates = row[Resource1.BarTableCoordinates].ToString();
 
 
                 if (editBar.ShowDialog() == DialogResult.OK)
                 {
 
 
-                    row["Name"] = editBar.BarName;
-                    row["Address"] = editBar.BarAddress;
-                    row["Map_coordinates"] = editBar.BarCoordinates != string.Empty ? editBar.BarCoordinates : null;
-                    row["Total_average"] = 0.00;
+                    row[Resource1.BarTableName] = editBar.BarName;
+                    row[Resource1.BarTableAddress] = editBar.BarAddress;
+                    row[Resource1.BarTableCoordinates] = editBar.BarCoordinates != string.Empty ? editBar.BarCoordinates : null;
+                    row[Resource1.BarTableAverage] = 0.00;
 
 
                     this.barsBindingSource.EndEdit();
@@ -205,7 +206,7 @@ namespace holy_water
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
 
             if (this.BarChanged != null)
-                BarChanged((int)row["Id"], row["Name"].ToString());
+                BarChanged((int)row[Resource1.BarTableID], row[Resource1.BarTableName].ToString());
 
         }
 
@@ -213,7 +214,7 @@ namespace holy_water
         {
 
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-            DrinkList drinkList = new DrinkList((int)row["Id"], row["Name"].ToString());
+            DrinkList drinkList = new DrinkList((int)row[Resource1.BarTableID], row[Resource1.BarTableName].ToString());
             drinkList.DrinkChanged += DrinkList_DrinkChanged;
 
             FormThread formThread = new FormThread(drinkList);
@@ -232,11 +233,11 @@ namespace holy_water
             DataRow totalsRow = tbl.Rows[0];
 
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-            row["Total_average"] = totalsRow["Total_average"];
-            row["Total_count"]   = totalsRow["Total_count"];
+            row[Resource1.BarTableAverage] = totalsRow[Resource1.BarTableAverage];
+            row[Resource1.BarTableCount]   = totalsRow[Resource1.BarTableCount];
 
             if (this.BarChanged != null)
-                BarChanged(int.Parse(row["Id"].ToString()), row["Name"].ToString());
+                BarChanged(int.Parse(row[Resource1.BarTableID].ToString()), row[Resource1.BarTableName].ToString());
 
         }
 
@@ -252,10 +253,32 @@ namespace holy_water
 
             toolStripFilterButton.BackColor = Color.Red;
 
-            if (barFilter.Filter == BarFilter.FilterType.FilteByAverage)
-                this.barsTableAdapter.FillByMinAverage(this.hollyWaterDbDataSet.Bars, barFilter.FilterMinValue);
+            if (barFilter.Filter == BarFilter.FilterType.FilterByAverage || barFilter.Filter == BarFilter.FilterType.FilterByCount)
+            {
+                if (barFilter.Filter == BarFilter.FilterType.FilterByAverage)
+                    this.barsTableAdapter.FillByMinAverage(this.hollyWaterDbDataSet.Bars, barFilter.FilterMinValue);
+                else
+                    this.barsTableAdapter.FillByMinCount(this.hollyWaterDbDataSet.Bars, (int)barFilter.FilterMinValue);
+            }
             else
-                this.barsTableAdapter.FillByMinCount(this.hollyWaterDbDataSet.Bars, (int)barFilter.FilterMinValue);
+            {
+                if (barFilter.Filter == BarFilter.FilterType.Top)
+                {
+                    HollyWaterDbDataSet.BarsDataTable table = barsTableAdapter.GetData();
+                    //HollyWaterDbDataSet.BarsDataTable row = table.AsEnumerable().Take((int)barFilter.FilterMinValue);
+                    HollyWaterDbDataSet.BarsDataTable temp = new HollyWaterDbDataSet.BarsDataTable();
+                    foreach(HollyWaterDbDataSet.BarsRow r in table.AsEnumerable().OrderBy(x => x.Total_average).Take((int)barFilter.FilterMinValue))
+                    {
+                        table.RemoveBarsRow(r);
+                        temp.Rows.Add(r);
+                    }
+                    barsTableAdapter.Fill(temp);
+                }
+                else
+                {
+
+                }
+            }
         }
 
         private void toolStripResetFilterButton_Click(object sender, EventArgs e)

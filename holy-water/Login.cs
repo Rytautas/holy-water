@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace holy_water
         {
             bool match = false;
             FilePrep prep = new FilePrep();
-            List<User> users = new List<User>(prep.ReadUser("UserData.txt"));
+            List<User> users = new List<User>(prep.ReadUser(Resource1.UserDataFile));
             User user = new User(UsernameTextBox.Text, PasswordTextBox.Text);
 #if DEBUG
             HashCode hash = delegate (string pw) { return HashPw(pw); };
@@ -38,7 +39,7 @@ namespace holy_water
             }
             if(!match)
             {
-                MessageBox.Show("Wrong username and/or password");
+                MessageBox.Show(Resource1.WrongLoginData);
             }
         }
 

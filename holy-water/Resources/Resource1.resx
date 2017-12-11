@@ -124,7 +124,31 @@
     <value>Are you 18+ years old?</value>
   </data>
   <data name="AgeDenied" xml:space="preserve">
-    <value>Sorry, you are underaged</value>
+    <value>You must be +18 years old to proceed</value>
+  </data>
+  <data name="BarStringFormat" xml:space="preserve">
+    <value>[{0}] - {1} drink list</value>
+  </data>
+  <data name="BarTableAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="BarTableAverage" xml:space="preserve">
+    <value>Total_average</value>
+  </data>
+  <data name="BarTableCoordinates" xml:space="preserve">
+    <value>Map_coordinates</value>
+  </data>
+  <data name="BarTableCount" xml:space="preserve">
+    <value>Total_count</value>
+  </data>
+  <data name="BarTableID" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="BarTableName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="BaseAdminValues" xml:space="preserve">
+    <value>admin\t-871874097\t1</value>
   </data>
   <data name="EmptyFields" xml:space="preserve">
     <value>Please fill all the fields</value>
@@ -144,6 +168,21 @@
   <data name="FilterNumberReg" xml:space="preserve">
     <value>^[0-9]+$</value>
   </data>
+  <data name="InvalidMinValue" xml:space="preserve">
+    <value>Invalid minimum value.</value>
+  </data>
+  <data name="LabelValueBars" xml:space="preserve">
+    <value>Number of bars</value>
+  </data>
+  <data name="LabelValueMin" xml:space="preserve">
+    <value>Minimum value</value>
+  </data>
+  <data name="LabelValueNewBar" xml:space="preserve">
+    <value>New Bar</value>
+  </data>
+  <data name="MessegeDelete" xml:space="preserve">
+    <value>Do you want to delete?</value>
+  </data>
   <data name="MinimalFilter" xml:space="preserve">
     <value>Enter the minimal level for filter</value>
   </data>
@@ -153,7 +192,25 @@
   <data name="NothingToShow" xml:space="preserve">
     <value>Nothing to show</value>
   </data>
+  <data name="PasswordsDontMatch" xml:space="preserve">
+    <value>Passwords must match</value>
+  </data>
   <data name="ReturnEmpty" xml:space="preserve">
     <value>The returned list is empty. Try again with different criteria or list</value>
+  </data>
+  <data name="UserCreated" xml:space="preserve">
+    <value>User created successfully</value>
+  </data>
+  <data name="UserDataFile" xml:space="preserve">
+    <value>UserData.txt</value>
+  </data>
+  <data name="UsernameTaken" xml:space="preserve">
+    <value>This username already exists</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="WrongLoginData" xml:space="preserve">
+    <value>Wrong username and/or password</value>
   </data>
 </root>

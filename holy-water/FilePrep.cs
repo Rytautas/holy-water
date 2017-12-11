@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -97,7 +98,7 @@ namespace holy_water
             {
                 if(u.Username == user.Username)
                 {
-                    u.dark = user.dark;
+                    u.Dark = user.Dark;
                     match = true;
                 }
             }
@@ -107,7 +108,7 @@ namespace holy_water
                 {
                     foreach(User u in users)
                     {
-                        wr.WriteLine(u.Username + "\t" + u.Password + "\t" + (user.dark == true ? 1 : 0));
+                        wr.WriteLine(u.Username + "\t" + u.Password + "\t" + (user.Dark == true ? 1 : 0));
                     }
                 }
             }
@@ -115,7 +116,7 @@ namespace holy_water
             {
                 using (StreamWriter wr = new StreamWriter(fileName, true))
                 {
-                    wr.WriteLine(user.Username + "\t" + hash(user.Password) + "\t" + (user.dark == true ? 1 : 0));
+                    wr.WriteLine(user.Username + "\t" + hash(user.Password) + "\t" + (user.Dark == true ? 1 : 0));
                 }
             }
         }
@@ -132,7 +133,7 @@ namespace holy_water
             {
                 using (StreamWriter wr = new StreamWriter(fileName))
                 {
-                    wr.WriteLine("admin\t-871874097\t1");
+                    wr.WriteLine(Resource1.BaseAdminValues);
                 }
                 sr = new StreamReader(fileName);
             }
