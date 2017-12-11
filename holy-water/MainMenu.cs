@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Windows.Forms;
 
 namespace holy_water
@@ -10,7 +11,7 @@ namespace holy_water
         {
             InitializeComponent();
             this.user = user;
-            Properties.Settings.Default.ThemeDark = user.dark;
+            Properties.Settings.Default.ThemeDark = user.Dark;
             if(!Properties.Settings.Default.ThemeDark)
             {
                 BackgroundImage = Properties.Resources.dribbble;
@@ -31,11 +32,6 @@ namespace holy_water
                 // loadinput.openinput();
                 LoadForm loadbarList = new LoadForm();
                 loadbarList.openinput();
-            }
-            else
-            {
-                Underage checkage = new Underage();
-                if (checkage.Msg() == true) checkBox1.Checked = true;
             }
         }
 
@@ -64,14 +60,14 @@ namespace holy_water
                 BackgroundImage = Properties.Resources.dark1;
                 Properties.Settings.Default.ThemeDark = true;
                 Properties.Settings.Default.Save();
-                prep.Write("UserData.txt", user);
+                prep.Write(Resource1.UserDataFile, user);
             }
             else
             {
                 BackgroundImage = Properties.Resources.dribbble;
                 Properties.Settings.Default.ThemeDark = false;
                 Properties.Settings.Default.Save();
-                prep.Write("UserData.txt", user);
+                prep.Write(Resource1.UserDataFile, user);
             }
         }
 

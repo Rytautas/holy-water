@@ -79,11 +79,83 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, you are underaged.
+        ///   Looks up a localized string similar to You must be +18 years old to proceed.
         /// </summary>
         internal static string AgeDenied {
             get {
                 return ResourceManager.GetString("AgeDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [{0}] - {1} drink list.
+        /// </summary>
+        internal static string BarStringFormat {
+            get {
+                return ResourceManager.GetString("BarStringFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        internal static string BarTableAddress {
+            get {
+                return ResourceManager.GetString("BarTableAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total_average.
+        /// </summary>
+        internal static string BarTableAverage {
+            get {
+                return ResourceManager.GetString("BarTableAverage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map_coordinates.
+        /// </summary>
+        internal static string BarTableCoordinates {
+            get {
+                return ResourceManager.GetString("BarTableCoordinates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total_count.
+        /// </summary>
+        internal static string BarTableCount {
+            get {
+                return ResourceManager.GetString("BarTableCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        internal static string BarTableID {
+            get {
+                return ResourceManager.GetString("BarTableID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string BarTableName {
+            get {
+                return ResourceManager.GetString("BarTableName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin\t-871874097\t1.
+        /// </summary>
+        internal static string BaseAdminValues {
+            get {
+                return ResourceManager.GetString("BaseAdminValues", resourceCulture);
             }
         }
         
@@ -142,6 +214,51 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid minimum value..
+        /// </summary>
+        internal static string InvalidMinValue {
+            get {
+                return ResourceManager.GetString("InvalidMinValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of bars.
+        /// </summary>
+        internal static string LabelValueBars {
+            get {
+                return ResourceManager.GetString("LabelValueBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum value.
+        /// </summary>
+        internal static string LabelValueMin {
+            get {
+                return ResourceManager.GetString("LabelValueMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Bar.
+        /// </summary>
+        internal static string LabelValueNewBar {
+            get {
+                return ResourceManager.GetString("LabelValueNewBar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete?.
+        /// </summary>
+        internal static string MessegeDelete {
+            get {
+                return ResourceManager.GetString("MessegeDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter the minimal level for filter.
         /// </summary>
         internal static string MinimalFilter {
@@ -169,11 +286,65 @@ namespace holy_water.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Passwords must match.
+        /// </summary>
+        internal static string PasswordsDontMatch {
+            get {
+                return ResourceManager.GetString("PasswordsDontMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The returned list is empty. Try again with different criteria or list.
         /// </summary>
         internal static string ReturnEmpty {
             get {
                 return ResourceManager.GetString("ReturnEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User created successfully.
+        /// </summary>
+        internal static string UserCreated {
+            get {
+                return ResourceManager.GetString("UserCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserData.txt.
+        /// </summary>
+        internal static string UserDataFile {
+            get {
+                return ResourceManager.GetString("UserDataFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This username already exists.
+        /// </summary>
+        internal static string UsernameTaken {
+            get {
+                return ResourceManager.GetString("UsernameTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong username and/or password.
+        /// </summary>
+        internal static string WrongLoginData {
+            get {
+                return ResourceManager.GetString("WrongLoginData", resourceCulture);
             }
         }
     }

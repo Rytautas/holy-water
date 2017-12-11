@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,16 +15,27 @@ namespace holy_water
     {
         public enum FilterType
         {
-            FilteByAverage,
-            FilterByCount
+            FilterByAverage,
+            FilterByCount,
+            Top,
+            Bottom
         }
 
-        public FilterType Filter {
-            get => rdbFilterByAverage.Checked ? FilterType.FilteByAverage : FilterType.FilterByCount;
+        public FilterType Filter
+        {
+            get
+            {
+                if (rdbFilterByAverage.Checked || rdbFilterByCount.Checked)
+                    return rdbFilterByAverage.Checked ? FilterType.FilterByAverage : FilterType.FilterByCount;
+                else
+                    return rdbTop.Checked ? FilterType.Top : FilterType.Bottom;
+            }
             set
             {
-                rdbFilterByAverage.Checked = value == FilterType.FilteByAverage;
+                rdbFilterByAverage.Checked = value == FilterType.FilterByAverage;
                 rdbFilterByCount.Checked = value == FilterType.FilterByCount;
+                rdbTop.Checked = value == FilterType.Top;
+                rdbBottom.Checked = value == FilterType.Bottom;
             }
         }
 
@@ -59,20 +71,52 @@ namespace holy_water
             double dbl;
             if (rdbFilterByAverage.Checked && !double.TryParse(txtMinimumValue.Text, out dbl))
             {
-                MessageBox.Show("Invalid minimum value.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource1.InvalidMinValue, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMinimumValue.Focus();
                 return false;
             }
 
             int i;
-            if (rdbFilterByCount.Checked && !int.TryParse(txtMinimumValue.Text, out i))
+            if ((rdbFilterByCount.Checked || rdbTop.Checked || rdbBottom.Checked) && !int.TryParse(txtMinimumValue.Text, out i))
             {
-                MessageBox.Show("Invalid minimum value.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource1.InvalidMinValue, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMinimumValue.Focus();
                 return false;
             }
 
             return true;
+        }
+
+        private void rdbFilterByAverage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbFilterByAverage.Checked)
+            {
+                label1.Text = Resource1.LabelValueMin;
+            }
+        }
+
+        private void rdbFilterByCount_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbFilterByCount.Checked)
+            {
+                label1.Text = Resource1.LabelValueMin;
+            }
+        }
+
+        private void rdbTop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbTop.Checked)
+            {
+                label1.Text = Resource1.LabelValueBars;
+            }
+        }
+
+        private void rdbBottom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbBottom.Checked)
+            {
+                label1.Text = Resource1.LabelValueBars;
+            }
         }
     }
 }

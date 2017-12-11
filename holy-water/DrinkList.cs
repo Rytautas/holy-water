@@ -1,4 +1,5 @@
-﻿using System;
+﻿using holy_water.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +37,7 @@ namespace holy_water
             this.barId = barId;
             this.barName = barName;
 
-            this.Text = string.Format("[{0}] - {1} drink list", barId, barName);
+            this.Text = string.Format(Resource1.BarStringFormat, barId, barName);
             this.drinksTableAdapter.FillByBar(this.hollyWaterDbDataSet.Drinks, barId);
             this.Invalidate();
             this.dataGridView1.Invalidate();
