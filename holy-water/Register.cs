@@ -41,7 +41,19 @@ namespace holy_water
                     }
                     if(!match)
                     {
-                        prep.Write(Resource1.UserDataFile, user);
+                        IHashService hash;
+                        HashService.HashServiceClient client = new HashService.HashServiceClient();
+
+                        if (client != null)
+                        {
+                            hash = new HashNonLocal();
+                        }
+                        else
+                        {
+                            hash = new HashLocal();
+                        }
+   
+                        prep.Write(Resource1.UserDataFile, user, hash);
                         MessageBox.Show(Resource1.UserCreated);
                         Close();
                     }
@@ -60,11 +72,6 @@ namespace holy_water
         private void BackButton_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private int HashPw(string pw)
-        {
-            return 0;
         }
 
         private void Register_Load(object sender, EventArgs e)

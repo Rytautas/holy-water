@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="HolyWaterWebService.HashService" CodeBehind="HashService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HolyWaterWebService.HashNonLocal" CodeBehind="HashService.svc.cs" %>

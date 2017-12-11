@@ -1,4 +1,5 @@
 ﻿using holy_water.Resources;
+using HolyWaterWebService;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -54,34 +55,8 @@ namespace holy_water
             }
         }
 
-        public void Write(String fileName, User user)
+        public void Write(String fileName, User user, IHashService hashClass)
         {
-            HashCode hash = null;
-#if DEBUG
-            hash += delegate (string pw)
-            {
-                unchecked
-                {
-                    int hash1 = 5381;
-                    int hash2 = hash1;
-
-                    for (int i = 0; i < pw.Length && pw[i] != '\0'; i += 2)
-                    {
-                        hash1 = ((hash1 << 5) + hash1) ^ pw[i];
-                        if (i == pw.Length - 1 || pw[i + 1] == '\0')
-                            break;
-                        hash2 = ((hash2 << 5) + hash2) ^ pw[i + 1];
-                    }
-
-                    return hash1 + (hash2 * 1566083941);
-                };
-            };
-#endif
-
-#if DEBUG_SERVICE
-            HashService.HashServiceClient client = new HashService.HashServiceClient();
-            hash += delegate (string pw) { return client.HashPassword(pw); };
-#endif
             List<User> users = new List<User>();
             bool match = false;
             using (StreamReader sr = new StreamReader(fileName))
@@ -116,7 +91,7 @@ namespace holy_water
             {
                 using (StreamWriter wr = new StreamWriter(fileName, true))
                 {
-                    wr.WriteLine(user.Username + "\t" + hash(user.Password) + "\t" + (user.Dark == true ? 1 : 0));
+                    wr.WriteLine(user.Username + "\t" + hashClass.HashPassword(user.Password) + "\t" + (user.Dark == true ? 1 : 0));
                 }
             }
         }
