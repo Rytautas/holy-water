@@ -1893,7 +1893,7 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Id, Name, Address, Map_coordinates, Total_average, Total_count\r\nFRO" +
@@ -1902,15 +1902,20 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        Id, Name, Address, Map_coordinates, Total_average, Total_count\r\nFRO" +
-                "M            Bars\r\nwhere total_average >= @min_average";
+                "M            Bars\r\nORDER BY  Total_average";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@min_average", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "Total_average", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        Id, Name, Address, Map_coordinates, Total_average, Total_count\r\nFRO" +
-                "M            Bars\r\nwhere total_count >= @minCount";
+                "M            Bars\r\nwhere total_average >= @min_average";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@minCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Total_count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@min_average", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "Total_average", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        Id, Name, Address, Map_coordinates, Total_average, Total_count\r\nFRO" +
+                "M            Bars\r\nwhere total_count >= @minCount";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@minCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Total_count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1941,8 +1946,32 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByMinAverage(HollyWaterDbDataSet.BarsDataTable dataTable, decimal min_average) {
+        public virtual int FillByAvg(HollyWaterDbDataSet.BarsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual HollyWaterDbDataSet.BarsDataTable GetDataByAvg() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            HollyWaterDbDataSet.BarsDataTable dataTable = new HollyWaterDbDataSet.BarsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByMinAverage(HollyWaterDbDataSet.BarsDataTable dataTable, decimal min_average) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(min_average));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1956,7 +1985,7 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual HollyWaterDbDataSet.BarsDataTable GetDataByMinAverage(decimal min_average) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(min_average));
             HollyWaterDbDataSet.BarsDataTable dataTable = new HollyWaterDbDataSet.BarsDataTable();
             this.Adapter.Fill(dataTable);
@@ -1968,7 +1997,7 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByMinCount(HollyWaterDbDataSet.BarsDataTable dataTable, int minCount) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(minCount));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1982,7 +2011,7 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual HollyWaterDbDataSet.BarsDataTable GetDataByMinCount(int minCount) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(minCount));
             HollyWaterDbDataSet.BarsDataTable dataTable = new HollyWaterDbDataSet.BarsDataTable();
             this.Adapter.Fill(dataTable);

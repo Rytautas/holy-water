@@ -27,16 +27,10 @@ namespace holy_water
         {
             if (checkBox1.CheckState == CheckState.Checked)
             {
-                // LoadForm loadinput = new LoadForm();
-                // loadinput.openinput();
                 LoadForm loadbarList = new LoadForm();
                 loadbarList.openinput();
             }
-            else
-            {
-                Underage checkage = new Underage();
-                if (checkage.Msg() == true) checkBox1.Checked = true;
-            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,13 +43,6 @@ namespace holy_water
             Close();
         }
 
-      /*  private void button1_Click_1(object sender, EventArgs e)
-        {
-            Average avg = new Average();
-            LoadForm loadstats = new LoadForm();
-            loadstats.openstats();
-        }
-        */
         private void DarkThemeSwitch_CheckedChanged(object sender, EventArgs e)
         {
             FilePrep prep = new FilePrep();

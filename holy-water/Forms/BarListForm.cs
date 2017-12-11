@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -55,7 +51,6 @@ namespace holy_water
 
             public void OnBarChanged(int barId, string barName)
             {
-                // ignore event on form close
                 if (!form.Visible)
                     return;
 
@@ -91,8 +86,8 @@ namespace holy_water
 
         private void BarList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hollyWaterDbDataSet.Bars' table. You can move, or remove it, as needed.
             this.barsTableAdapter.Fill(this.hollyWaterDbDataSet.Bars);
+
             Enable_buttons();
             
         }
@@ -131,8 +126,6 @@ namespace holy_water
 
         }
 
-
-       
 
         private void dataGridView2_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
@@ -252,10 +245,14 @@ namespace holy_water
 
             toolStripFilterButton.BackColor = Color.Red;
 
-            if (barFilter.Filter == BarFilter.FilterType.FilteByAverage)
-                this.barsTableAdapter.FillByMinAverage(this.hollyWaterDbDataSet.Bars, barFilter.FilterMinValue);
-            else
-                this.barsTableAdapter.FillByMinCount(this.hollyWaterDbDataSet.Bars, (int)barFilter.FilterMinValue);
+            if (barFilter.Filter == BarFilter.FilterType.FilterByAverage || barFilter.Filter == BarFilter.FilterType.FilterByCount)
+            {
+                if (barFilter.Filter == BarFilter.FilterType.FilterByAverage)
+                    this.barsTableAdapter.FillByMinAverage(this.hollyWaterDbDataSet.Bars, barFilter.FilterMinValue);
+                else
+                    this.barsTableAdapter.FillByMinCount(this.hollyWaterDbDataSet.Bars, (int)barFilter.FilterMinValue);
+            }
+           
         }
 
         private void toolStripResetFilterButton_Click(object sender, EventArgs e)

@@ -71,6 +71,16 @@ SELECT Id, Name, Address, Map_coordinates, Total_average, Total_count FROM Bars 
               <Mapping SourceColumn="Total_count" DataSetColumn="Total_count" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="connString (Settings)" DbObjectName="barsDatabase.dbo.Bars" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAvg" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAvg" GeneratorSourceName="FillByAvg" GetMethodModifier="Public" GetMethodName="GetDataByAvg" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAvg" UserSourceName="FillByAvg">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Id, Name, Address, Map_coordinates, Total_average, Total_count
+FROM            Bars
+ORDER BY  Total_average</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="connString (Settings)" DbObjectName="dbo.Bars" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByMinAverage" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMinAverage" GeneratorSourceName="FillByMinAverage" GetMethodModifier="Public" GetMethodName="GetDataByMinAverage" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMinAverage" UserSourceName="FillByMinAverage">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -229,7 +239,7 @@ WHERE Id = @Id
   <xs:element name="HollyWaterDbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HollyWaterDbDataSet" msprop:Generator_UserDSName="HollyWaterDbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Bars" msprop:Generator_TableClassName="BarsDataTable" msprop:Generator_TableVarName="tableBars" msprop:Generator_RowChangedName="BarsRowChanged" msprop:Generator_TablePropName="Bars" msprop:Generator_RowDeletingName="BarsRowDeleting" msprop:Generator_RowChangingName="BarsRowChanging" msprop:Generator_RowEvHandlerName="BarsRowChangeEventHandler" msprop:Generator_RowDeletedName="BarsRowDeleted" msprop:Generator_RowClassName="BarsRow" msprop:Generator_UserTableName="Bars" msprop:Generator_RowEvArgName="BarsRowChangeEvent">
+        <xs:element name="Bars" msprop:Generator_TableClassName="BarsDataTable" msprop:Generator_TableVarName="tableBars" msprop:Generator_TablePropName="Bars" msprop:Generator_RowDeletingName="BarsRowDeleting" msprop:Generator_RowChangingName="BarsRowChanging" msprop:Generator_RowEvHandlerName="BarsRowChangeEventHandler" msprop:Generator_RowDeletedName="BarsRowDeleted" msprop:Generator_UserTableName="Bars" msprop:Generator_RowChangedName="BarsRowChanged" msprop:Generator_RowEvArgName="BarsRowChangeEvent" msprop:Generator_RowClassName="BarsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -259,7 +269,7 @@ WHERE Id = @Id
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Drinks" msprop:Generator_TableClassName="DrinksDataTable" msprop:Generator_TableVarName="tableDrinks" msprop:Generator_RowChangedName="DrinksRowChanged" msprop:Generator_TablePropName="Drinks" msprop:Generator_RowDeletingName="DrinksRowDeleting" msprop:Generator_RowChangingName="DrinksRowChanging" msprop:Generator_RowEvHandlerName="DrinksRowChangeEventHandler" msprop:Generator_RowDeletedName="DrinksRowDeleted" msprop:Generator_RowClassName="DrinksRow" msprop:Generator_UserTableName="Drinks" msprop:Generator_RowEvArgName="DrinksRowChangeEvent">
+        <xs:element name="Drinks" msprop:Generator_TableClassName="DrinksDataTable" msprop:Generator_TableVarName="tableDrinks" msprop:Generator_TablePropName="Drinks" msprop:Generator_RowDeletingName="DrinksRowDeleting" msprop:Generator_RowChangingName="DrinksRowChanging" msprop:Generator_RowEvHandlerName="DrinksRowChangeEventHandler" msprop:Generator_RowDeletedName="DrinksRowDeleted" msprop:Generator_UserTableName="Drinks" msprop:Generator_RowChangedName="DrinksRowChanged" msprop:Generator_RowEvArgName="DrinksRowChangeEvent" msprop:Generator_RowClassName="DrinksRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
@@ -270,7 +280,7 @@ WHERE Id = @Id
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BarsTotals" msprop:Generator_TableClassName="BarsTotalsDataTable" msprop:Generator_TableVarName="tableBarsTotals" msprop:Generator_RowChangedName="BarsTotalsRowChanged" msprop:Generator_TablePropName="BarsTotals" msprop:Generator_RowDeletingName="BarsTotalsRowDeleting" msprop:Generator_RowChangingName="BarsTotalsRowChanging" msprop:Generator_RowEvHandlerName="BarsTotalsRowChangeEventHandler" msprop:Generator_RowDeletedName="BarsTotalsRowDeleted" msprop:Generator_RowClassName="BarsTotalsRow" msprop:Generator_UserTableName="BarsTotals" msprop:Generator_RowEvArgName="BarsTotalsRowChangeEvent">
+        <xs:element name="BarsTotals" msprop:Generator_TableClassName="BarsTotalsDataTable" msprop:Generator_TableVarName="tableBarsTotals" msprop:Generator_TablePropName="BarsTotals" msprop:Generator_RowDeletingName="BarsTotalsRowDeleting" msprop:Generator_RowChangingName="BarsTotalsRowChanging" msprop:Generator_RowEvHandlerName="BarsTotalsRowChangeEventHandler" msprop:Generator_RowDeletedName="BarsTotalsRowDeleted" msprop:Generator_UserTableName="BarsTotals" msprop:Generator_RowChangedName="BarsTotalsRowChanged" msprop:Generator_RowEvArgName="BarsTotalsRowChangeEvent" msprop:Generator_RowClassName="BarsTotalsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -303,8 +313,8 @@ WHERE Id = @Id
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Drinks_Bars" msdata:parent="Bars" msdata:child="Drinks" msdata:parentkey="Id" msdata:childkey="Bar_Id" msprop:Generator_UserChildTable="Drinks" msprop:Generator_ChildPropName="GetDrinksRows" msprop:Generator_UserRelationName="FK_Drinks_Bars" msprop:Generator_RelationVarName="relationFK_Drinks_Bars" msprop:Generator_UserParentTable="Bars" msprop:Generator_ParentPropName="BarsRow" />
-      <msdata:Relationship name="FK_Drinks_Bars1" msdata:parent="BarsTotals" msdata:child="Drinks" msdata:parentkey="Id" msdata:childkey="Bar_Id" msprop:Generator_UserChildTable="Drinks" msprop:Generator_ChildPropName="GetDrinksRows" msprop:Generator_UserRelationName="FK_Drinks_Bars1" msprop:Generator_ParentPropName="BarsTotalsRow" msprop:Generator_RelationVarName="relationFK_Drinks_Bars1" msprop:Generator_UserParentTable="BarsTotals" />
+      <msdata:Relationship name="FK_Drinks_Bars" msdata:parent="Bars" msdata:child="Drinks" msdata:parentkey="Id" msdata:childkey="Bar_Id" msprop:Generator_UserChildTable="Drinks" msprop:Generator_ChildPropName="GetDrinksRows" msprop:Generator_UserRelationName="FK_Drinks_Bars" msprop:Generator_ParentPropName="BarsRow" msprop:Generator_RelationVarName="relationFK_Drinks_Bars" msprop:Generator_UserParentTable="Bars" />
+      <msdata:Relationship name="FK_Drinks_Bars1" msdata:parent="BarsTotals" msdata:child="Drinks" msdata:parentkey="Id" msdata:childkey="Bar_Id" msprop:Generator_UserChildTable="Drinks" msprop:Generator_ChildPropName="GetDrinksRows" msprop:Generator_UserRelationName="FK_Drinks_Bars1" msprop:Generator_RelationVarName="relationFK_Drinks_Bars1" msprop:Generator_UserParentTable="BarsTotals" msprop:Generator_ParentPropName="BarsTotalsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

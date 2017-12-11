@@ -86,7 +86,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="barsDatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="barsDatabaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bars" EntityType="Self.Bar" />
           <EntitySet Name="Drinks" EntityType="Self.Drink" />
           <AssociationSet Name="FK_Drinks_Bars" Association="Self.FK_Drinks_Bars">
@@ -99,7 +99,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="barsDatabaseModelStoreContainer" CdmEntityContainer="barsDatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="barsDatabaseModelStoreContainer" CdmEntityContainer="barsDatabaseEntities1">
           <EntitySetMapping Name="Bars">
             <EntityTypeMapping TypeName="barsDatabaseModel.Bar">
               <MappingFragment StoreEntitySet="Bars">

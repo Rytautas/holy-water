@@ -88,31 +88,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarFilter.cs">
+    <Compile Include="Drink.cs">
+      <DependentUpon>EntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BarFilterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BarFilter.Designer.cs">
-      <DependentUpon>BarFilter.cs</DependentUpon>
+    <Compile Include="Forms\BarFilterForm.Designer.cs">
+      <DependentUpon>BarFilterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DrinkList.cs">
+    <Compile Include="Forms\DrinkListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DrinkList.Designer.cs">
-      <DependentUpon>DrinkList.cs</DependentUpon>
+    <Compile Include="Forms\DrinkListForm.Designer.cs">
+      <DependentUpon>DrinkListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditBar.cs">
+    <Compile Include="Forms\EditBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditBar.Designer.cs">
-      <DependentUpon>EditBar.cs</DependentUpon>
+    <Compile Include="Forms\EditBarForm.Designer.cs">
+      <DependentUpon>EditBarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Average.cs" />
-    <Compile Include="Bar.cs" />
-    <Compile Include="BarList.cs">
+    <Compile Include="Bar.cs">
+      <DependentUpon>EntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BarListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BarList.Designer.cs">
-      <DependentUpon>BarList.cs</DependentUpon>
+    <Compile Include="Forms\BarListForm.Designer.cs">
+      <DependentUpon>BarListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\HashService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -127,90 +146,62 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HollyWaterDbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="InputDrink.cs">
+    <Compile Include="Forms\InputDrinkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InputDrink.Designer.cs">
-      <DependentUpon>InputDrink.cs</DependentUpon>
+    <Compile Include="Forms\InputDrinkForm.Designer.cs">
+      <DependentUpon>InputDrinkForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Register.cs">
+    <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="Forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stats.cs" />
-    <Compile Include="StatsPrep.cs" />
-    <Compile Include="StringExtention.cs" />
-    <Compile Include="Filter.cs" />
-    <Compile Include="FilePrep.cs" />
-    <Compile Include="LoadForm.cs" />
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Controllers\StringExtentionController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
+    <Compile Include="Controllers\FilePrepController.cs" />
+    <Compile Include="Controllers\LoadFormController.cs" />
+    <Compile Include="Forms\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Input.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Input.Designer.cs">
-      <DependentUpon>Input.cs</DependentUpon>
+    <Compile Include="Forms\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Underage.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="ViewStatistics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewStatistics.Designer.cs">
-      <DependentUpon>ViewStatistics.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="BarFilter.resx">
-      <DependentUpon>BarFilter.cs</DependentUpon>
+    <Compile Include="Controllers\UserController.cs" />
+    <EmbeddedResource Include="Forms\BarFilterForm.resx">
+      <DependentUpon>BarFilterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DrinkList.resx">
-      <DependentUpon>DrinkList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DrinkListForm.resx">
+      <DependentUpon>DrinkListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBar.resx">
-      <DependentUpon>EditBar.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditBarForm.resx">
+      <DependentUpon>EditBarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BarList.resx">
-      <DependentUpon>BarList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BarListForm.resx">
+      <DependentUpon>BarListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputDrink.resx">
-      <DependentUpon>InputDrink.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InputDrinkForm.resx">
+      <DependentUpon>InputDrinkForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Input.resx">
-      <DependentUpon>Input.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,15 +213,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewStatistics.resx">
-      <DependentUpon>ViewStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\HashService\HashService.wsdl" />
     <None Include="Connected Services\HashService\HashService.xsd">
@@ -238,6 +226,13 @@
     </None>
     <None Include="Connected Services\HashService\HashService1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="EntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityModel.edmx.diagram">
+      <DependentUpon>EntityModel.edmx</DependentUpon>
     </None>
     <None Include="HollyWaterDbDataSet.xsc">
       <DependentUpon>HollyWaterDbDataSet.xsd</DependentUpon>
@@ -249,13 +244,6 @@
     </None>
     <None Include="HollyWaterDbDataSet.xss">
       <DependentUpon>HollyWaterDbDataSet.xsd</DependentUpon>
-    </None>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -320,10 +308,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>EntityModel.edmx</DependentUpon>
+      <LastGenOutput>EntityModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EntityModel.edmx</DependentUpon>
+      <LastGenOutput>EntityModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

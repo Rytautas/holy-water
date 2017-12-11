@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbFilterByAverage = new System.Windows.Forms.RadioButton();
+            this.rdbBottom = new System.Windows.Forms.RadioButton();
+            this.rdbTop = new System.Windows.Forms.RadioButton();
             this.rdbFilterByCount = new System.Windows.Forms.RadioButton();
+            this.rdbFilterByAverage = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMinimumValue = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
@@ -40,14 +42,29 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdbBottom);
+            this.groupBox1.Controls.Add(this.rdbTop);
             this.groupBox1.Controls.Add(this.rdbFilterByCount);
             this.groupBox1.Controls.Add(this.rdbFilterByAverage);
             this.groupBox1.Location = new System.Drawing.Point(32, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 79);
+            this.groupBox1.Size = new System.Drawing.Size(200, 113);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter condition";
+           
+            
+            // 
+            // rdbFilterByCount
+            // 
+            this.rdbFilterByCount.AutoSize = true;
+            this.rdbFilterByCount.Location = new System.Drawing.Point(7, 44);
+            this.rdbFilterByCount.Name = "rdbFilterByCount";
+            this.rdbFilterByCount.Size = new System.Drawing.Size(91, 17);
+            this.rdbFilterByCount.TabIndex = 1;
+            this.rdbFilterByCount.Text = "Filter by count";
+            this.rdbFilterByCount.UseVisualStyleBackColor = true;
+            this.rdbFilterByCount.CheckedChanged += new System.EventHandler(this.rdbFilterByCount_CheckedChanged);
             // 
             // rdbFilterByAverage
             // 
@@ -60,21 +77,12 @@
             this.rdbFilterByAverage.TabStop = true;
             this.rdbFilterByAverage.Text = "Filter by average ";
             this.rdbFilterByAverage.UseVisualStyleBackColor = true;
-            // 
-            // rdbFilterByCount
-            // 
-            this.rdbFilterByCount.AutoSize = true;
-            this.rdbFilterByCount.Location = new System.Drawing.Point(7, 44);
-            this.rdbFilterByCount.Name = "rdbFilterByCount";
-            this.rdbFilterByCount.Size = new System.Drawing.Size(91, 17);
-            this.rdbFilterByCount.TabIndex = 1;
-            this.rdbFilterByCount.Text = "Filter by count";
-            this.rdbFilterByCount.UseVisualStyleBackColor = true;
+            this.rdbFilterByAverage.CheckedChanged += new System.EventHandler(this.rdbFilterByAverage_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 120);
+            this.label1.Location = new System.Drawing.Point(37, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 1;
@@ -82,7 +90,7 @@
             // 
             // txtMinimumValue
             // 
-            this.txtMinimumValue.Location = new System.Drawing.Point(39, 136);
+            this.txtMinimumValue.Location = new System.Drawing.Point(39, 184);
             this.txtMinimumValue.Name = "txtMinimumValue";
             this.txtMinimumValue.Size = new System.Drawing.Size(179, 20);
             this.txtMinimumValue.TabIndex = 2;
@@ -90,7 +98,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(107, 174);
+            this.btnOk.Location = new System.Drawing.Point(110, 244);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
@@ -101,7 +109,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(197, 174);
+            this.btnCancel.Location = new System.Drawing.Point(200, 244);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
@@ -115,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(284, 211);
+            this.ClientSize = new System.Drawing.Size(284, 277);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtMinimumValue);
@@ -126,6 +134,7 @@
             this.MinimizeBox = false;
             this.Name = "BarFilter";
             this.Text = "Bars filter";
+            this.Load += new System.EventHandler(this.BarFilter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,5 +151,7 @@
         private System.Windows.Forms.TextBox txtMinimumValue;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.RadioButton rdbBottom;
+        private System.Windows.Forms.RadioButton rdbTop;
     }
 }

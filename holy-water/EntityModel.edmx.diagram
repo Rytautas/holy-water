@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6604b82f9db9403980cf8eb4ad261dee" Name="Diagram1">
+      <Diagram DiagramId="3ae7efccf2824c99bba8f4f75db888c5" Name="Diagram1">
         <EntityTypeShape EntityType="barsDatabaseModel.Bar" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="barsDatabaseModel.Drink" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="barsDatabaseModel.FK_Drinks_Bars" ManuallyRouted="false" />

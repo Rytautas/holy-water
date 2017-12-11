@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace holy_water
@@ -14,15 +7,20 @@ namespace holy_water
     {
         public enum FilterType
         {
-            FilteByAverage,
+            FilterByAverage,
             FilterByCount
         }
 
-        public FilterType Filter {
-            get => rdbFilterByAverage.Checked ? FilterType.FilteByAverage : FilterType.FilterByCount;
+        public FilterType Filter
+        {
+            get
+            {
+                    return rdbFilterByAverage.Checked ? FilterType.FilterByAverage : FilterType.FilterByCount;
+                
+            }
             set
             {
-                rdbFilterByAverage.Checked = value == FilterType.FilteByAverage;
+                rdbFilterByAverage.Checked = value == FilterType.FilterByAverage;
                 rdbFilterByCount.Checked = value == FilterType.FilterByCount;
             }
         }
@@ -65,7 +63,7 @@ namespace holy_water
             }
 
             int i;
-            if (rdbFilterByCount.Checked && !int.TryParse(txtMinimumValue.Text, out i))
+            if ((rdbFilterByCount.Checked) && !int.TryParse(txtMinimumValue.Text, out i))
             {
                 MessageBox.Show("Invalid minimum value.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMinimumValue.Focus();
@@ -73,6 +71,28 @@ namespace holy_water
             }
 
             return true;
+        }
+
+        private void rdbFilterByAverage_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbFilterByAverage.Checked)
+            {
+                label1.Text = "Minimum value";
+            }
+        }
+
+        private void rdbFilterByCount_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbFilterByCount.Checked)
+            {
+                label1.Text = "Minimum value";
+            }
+        }
+
+
+        private void BarFilter_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
