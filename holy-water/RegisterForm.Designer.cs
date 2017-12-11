@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class Register
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.

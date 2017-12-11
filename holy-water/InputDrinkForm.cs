@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class InputDrink : Form
+    public partial class InputDrinkForm : Form
     {
 
         public DateTime DrinkTime { get => dtpDrinkTime.Value; }
         public decimal GlassVolume { get => txtGlassVolume.Value; }
         public int FillPercentage { get => this.trkFillPercentage.Value;  }
 
-        public InputDrink()
+        public InputDrinkForm()
         {
             InitializeComponent();
 

@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         public delegate int HashCode(string pw);
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace holy_water
             {
                 if(u.Username == user.Username && Int32.Parse(u.Password) == hash(user.Password))
                 {
-                    MainMenu menu = new MainMenu(u);
+                    MainMenuForm menu = new MainMenuForm(u);
                     match = true;
                     menu.Show();
                 }
@@ -44,7 +44,7 @@ namespace holy_water
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            Register reg = new Register();
+            RegisterForm reg = new RegisterForm();
             reg.Show();
         }
 

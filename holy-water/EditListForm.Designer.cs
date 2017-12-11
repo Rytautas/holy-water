@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class EditBar
+    partial class EditListForm
     {
         /// <summary>
         /// Required designer variable.

@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace holy_water
 {
-    public partial class BarList : Form
+    public partial class BarListForm : Form
     {
         public event OnBarChanged BarChanged;
         public delegate void OnBarChanged(int barId, string barName);
@@ -24,10 +24,10 @@ namespace holy_water
             public delegate void BarChangedDelegate(int barId, string barName);
             public delegate void CloseFormDelegate();
 
-            DrinkList form;
+            DrinkListForm form;
             Thread thread;
 
-            public FormThread(DrinkList form)
+            public FormThread(DrinkListForm form)
             {
                 this.form = form;
                 this.thread = new Thread(new ThreadStart(this.Run));
@@ -73,7 +73,7 @@ namespace holy_water
 
         private BarFilter barFilter = new BarFilter();
 
-        public BarList()
+        public BarListForm()
         {
             InitializeComponent();
 
@@ -105,7 +105,7 @@ namespace holy_water
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            using (EditBar editBar = new EditBar())
+            using (EditListForm editBar = new EditListForm())
             {
                 editBar.Text = "New Bar";
                 if (editBar.ShowDialog() == DialogResult.OK)
@@ -168,7 +168,7 @@ namespace holy_water
 
         private void editRow()
         {
-            using (EditBar editBar = new EditBar())
+            using (EditListForm editBar = new EditListForm())
             {
                 editBar.Text = "Edit Bar";
                 DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
@@ -213,7 +213,7 @@ namespace holy_water
         {
 
             DataRow row = ((DataRowView)this.barsBindingSource.Current).Row;
-            DrinkList drinkList = new DrinkList((int)row["Id"], row["Name"].ToString());
+            DrinkListForm drinkList = new DrinkListForm((int)row["Id"], row["Name"].ToString());
             drinkList.DrinkChanged += DrinkList_DrinkChanged;
 
             FormThread formThread = new FormThread(drinkList);

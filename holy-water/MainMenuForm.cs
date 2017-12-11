@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class MainMenu : Form
+    public partial class MainMenuForm : Form
     {
         User user;
-        public MainMenu(User user)
+        public MainMenuForm(User user)
         {
             InitializeComponent();
             this.user = user;
@@ -77,7 +77,7 @@ namespace holy_water
 
         private void button3_Click(object sender, EventArgs e)
         {
-            (new BarList()).ShowDialog();
+            (new BarListForm()).ShowDialog();
         }
     }
 }

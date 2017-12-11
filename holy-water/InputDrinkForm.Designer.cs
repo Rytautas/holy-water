@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class InputDrink
+    partial class InputDrinkForm
     {
         /// <summary>
         /// Required designer variable.

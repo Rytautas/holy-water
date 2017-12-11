@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class EditBar : Form
+    public partial class EditListForm : Form
     {
         public string BarName { get => this.txtName.Text; set => this.txtName.Text = value; }
         public string BarAddress { get => this.txtAddress.Text; set => this.txtAddress.Text = value; }
         public string BarCoordinates { get => this.txtCoordinates.Text; set => this.txtCoordinates.Text = value; }
 
-        public EditBar()
+        public EditListForm()
         {
             InitializeComponent();
         }

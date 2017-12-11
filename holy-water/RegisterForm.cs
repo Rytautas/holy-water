@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class Register : Form
+    public partial class RegisterForm : Form
     {
-        public Register()
+        public RegisterForm()
         {
             InitializeComponent();
         }

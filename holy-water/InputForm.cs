@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class Input : Form
+    public partial class InputForm : Form
     {
         List<Bar> bars = new List<Bar>();
         public List<Bar> selectedBars;
 
-        public Input()
+        public InputForm()
         {
             InitializeComponent();
             if (Properties.Settings.Default.ThemeDark)

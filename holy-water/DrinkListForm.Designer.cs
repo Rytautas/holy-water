@@ -1,6 +1,6 @@
 ﻿namespace holy_water
 {
-    partial class DrinkList
+    partial class DrinkListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinkList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinkListForm));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.drinksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hollyWaterDbDataSet = new holy_water.HollyWaterDbDataSet();

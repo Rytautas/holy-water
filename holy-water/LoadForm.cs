@@ -4,7 +4,7 @@
     {
       public void openinput()
         {
-            BarList barList = new BarList();
+            BarListForm barList = new BarListForm();
             barList.Show();
         }
     //  public void openstats()

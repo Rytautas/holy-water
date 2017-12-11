@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace holy_water
 {
-    public partial class DrinkList : Form
+    public partial class DrinkListForm : Form
     {
         public event OnDrinkChanged DrinkChanged;
         public delegate void OnDrinkChanged(int barId);
@@ -20,7 +20,7 @@ namespace holy_water
         private int barId;
         private string barName;
 
-        public DrinkList(int barId, String barName)
+        public DrinkListForm(int barId, String barName)
         {
  
 
@@ -52,7 +52,7 @@ namespace holy_water
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            InputDrink inputDrink = new InputDrink();
+            InputDrinkForm inputDrink = new InputDrinkForm();
 
             if (inputDrink.ShowDialog() == DialogResult.Cancel)
                 return;
